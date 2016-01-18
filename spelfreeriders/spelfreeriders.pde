@@ -12,6 +12,7 @@ boolean left, right, space;
 
 PImage img, bg, star;
 
+int score;
 
 void setup(){
  size(    500,700);
@@ -28,6 +29,8 @@ void setup(){
   playerHeight = 50;
   playerY = width/2;
   playerX = 700;
+
+  score = 0;
   
   img = loadImage("flyingCow.png");
   bg = loadImage("background.png");
@@ -42,6 +45,8 @@ obstacles();
 player();
 obstacleMove();
 jump();
+score();
+
 }
 
 
@@ -68,7 +73,6 @@ void obstacles()
 
 
 void player() {
-imageMode(CENTER);
 image(img, playerY - playerWidth/2, playerX - playerHeight/2, playerWidth, playerHeight);
 //rect(playerY - playerWidth/2, playerX - playerHeight, playerWidth, playerHeight);
 }
@@ -96,6 +100,18 @@ if(right == true && playerY  < 500){
 }
 
 }
+
+void score(){
+  
+textSize(40);
+text(score,40,50);  
+  
+//if(playerX < obs1X){
+//  score = score + 1;
+//}
+  
+}
+
 
 
 void keyPressed() {
