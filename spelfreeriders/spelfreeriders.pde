@@ -68,7 +68,7 @@ void obstacles()
 
 
 void player() {
-fill(255);
+imageMode(CENTER);
 image(img, playerY - playerWidth/2, playerX - playerHeight/2, playerWidth, playerHeight);
 //rect(playerY - playerWidth/2, playerX - playerHeight, playerWidth, playerHeight);
 }
@@ -76,20 +76,22 @@ image(img, playerY - playerWidth/2, playerX - playerHeight/2, playerWidth, playe
 
 void jump(){
   
-if(space == true) {
+if(space == true && playerX - playerHeight > 0) {
  playerX = playerX - 12;
 }
 else if(playerX < 700 ) {
  playerX = playerX + 6;
 }
 
+if(playerX - playerHeight < 0 || playerY - playerWidth < 0 || playerY  > 500 ) {
+setup();
+}
 
-
-if(left == true){
+if(left == true && playerY - playerWidth > 0){
   playerY = playerY-6;
 }
 
-if(right == true){
+if(right == true && playerY  < 500){
   playerY = playerY +6;
 }
 
