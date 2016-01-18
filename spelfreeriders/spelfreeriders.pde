@@ -10,9 +10,7 @@ float playerWidth, playerHeight, playerY, playerX;
 
 boolean left, right, space; 
 
-PImage img;
-PImage bg;
-PImage star;
+PImage img, bg, star;
 
 
 void setup(){
@@ -64,7 +62,7 @@ void obstacles()
  rect(200, obs1X, 300, 20);
  rect(0, obs2X, 200,20);
  rect (300, obs3X, 200, 20);
- image(star, 200,obs4X, 100, 100);
+ image(star, 200,obs4X, 50, 50);
  rect(0, obs5X, 300 ,20);
 }
 
