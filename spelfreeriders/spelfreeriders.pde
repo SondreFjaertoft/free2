@@ -1,7 +1,7 @@
 
 //obsticles X position
 int obs1X,obs2X, obs3X, obs4X, obs5X;
-
+int obs1Y,obs2Y, obs3Y, obs4Y, obs5Y;
 //movement speed of obsticles
 int moveSpeed;
 
@@ -22,6 +22,12 @@ void setup(){
   obs3X = -150; 
   obs4X = 0; 
   obs5X = -350;
+  
+  obs1Y = 200 ;
+  obs2Y = 200 ;
+  obs3Y = 300 ;
+  obs4Y = 200 ; //stjerne
+  obs5Y = 300;
 
   moveSpeed = 1;
   
@@ -46,6 +52,7 @@ player();
 obstacleMove();
 jump();
 score();
+reset();
 
 }
 
@@ -64,11 +71,11 @@ obs5X =obs5X + moveSpeed;
 void obstacles()
 {
  fill(255);
- rect(200, obs1X, 300, 20);
- rect(0, obs2X, 200,20);
- rect (300, obs3X, 200, 20);
- image(star, 200,obs4X, 50, 50);
- rect(0, obs5X, 300 ,20);
+ rect(obs1Y, obs1X, 300, 20);
+ rect(0, obs2X, obs2Y,20);
+ rect (obs3Y, obs3X, 200, 20);
+ image(star, obs4Y,obs4X, 50, 50);
+ rect(0, obs5X, obs5Y ,20);
 }
 
 
@@ -87,9 +94,6 @@ else if(playerX < 700 ) {
  playerX = playerX + 6;
 }
 
-if(playerX - playerHeight < 0 || playerY - playerWidth < 0 || playerY  > 500 ) {
-setup();
-}
 
 if(left == true && playerY - playerWidth > 0){
   playerY = playerY-6;
@@ -106,10 +110,52 @@ void score(){
 textSize(40);
 text(score,40,50);  
   
-//if(playerX < obs1X){
-//  score = score + 1;
-//}
+if(playerX < obs1X){
+  score =  1;
+}
+
+if(playerX < obs2X){
+  score =  2;
+}
+
+if(playerX < obs3X){
+  score = 3;
+}
+
+
+if(playerX < obs5X){
+  score = 4;
+}
   
+}
+
+void reset() {
+//sjekker om player kommer bort i veggene, dersom den gjør det blir spillet resett
+if(playerX - playerHeight < 0 || playerY - playerWidth < 0 || playerY  > 500 ) {
+setup();
+}
+
+//høgre hinder nr 1
+if(playerX - playerHeight < obs1X && playerY > obs1Y && playerX > obs1X + 20){
+setup();
+} 
+
+//venstre hinder nr2
+else if(playerX - playerHeight < obs2X && playerY -playerWidth < obs2Y && playerX> obs2X + 20){
+setup();
+} 
+
+//høgre hinder nr 3
+if(playerX - playerHeight < obs3X && playerY > obs3Y && playerX > obs3X + 20){
+setup();
+} 
+
+//venstre hinder nr 4
+if(playerX - playerHeight < obs5X && playerY - playerWidth< obs5Y && playerX > obs5X + 20){
+setup();
+} 
+
+
 }
 
 
