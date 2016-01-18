@@ -10,7 +10,7 @@ float playerWidth, playerHeight, playerY, playerX;
 
 boolean left, right, space; 
 
-PImage img, bg, star;
+PImage img, bg, star, obs;
 
 int score;
 
@@ -41,6 +41,7 @@ void setup(){
   img = loadImage("flyingCow.png");
   bg = loadImage("background.png");
   star = loadImage("star.png");
+  obs = loadImage("obs.png");
 }
 
 
@@ -53,7 +54,7 @@ obstacleMove();
 jump();
 score();
 reset();
-
+star();
 }
 
 
@@ -70,14 +71,21 @@ obs5X =obs5X + moveSpeed;
 
 void obstacles()
 {
+ imageMode(CORNER);
  fill(255);
- rect(obs1Y, obs1X, 300, 20);
- rect(0, obs2X, obs2Y,20);
- rect (obs3Y, obs3X, 200, 20);
- image(star, obs4Y,obs4X, 50, 50);
- rect(0, obs5X, obs5Y ,20);
+ image(obs, obs1Y, obs1X, 300, 20);
+ image(obs, 0, obs2X, obs2Y,20);
+ image(obs, obs3Y, obs3X, 200, 20);
+ 
+ image(obs, 0, obs5X, obs5Y ,20);
+ imageMode(CENTER);
 }
 
+
+void star(){
+image(star, obs4Y,obs4X, 50, 50);
+
+}
 
 void player() {
 image(img, playerY - playerWidth/2, playerX - playerHeight/2, playerWidth, playerHeight);
