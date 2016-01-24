@@ -13,8 +13,8 @@ PImage img, bg, star, obs;
 
 int score;
 
-float gravity = 0.5;
-float velocityX, velocityY;
+float gravity;
+float velocityX;
 
 
 void setup(){
@@ -47,11 +47,7 @@ void setup(){
   star = loadImage("star.png");
   obs = loadImage("obs.png");
   
-  
-  playerX += velocityX * 0.5;
-  playerY += velocityY * 0.5;
-  velocityY += gravity * 0.5;
-  
+  gravity = 0.5;
 }
 
 
@@ -105,8 +101,8 @@ image(img, playerY - playerWidth/2, playerX - playerHeight/2, playerWidth, playe
 
 
 void jump(){
-playerX += velocityX  ; 
-velocityX += gravity ;
+playerX += velocityX; 
+velocityX += gravity;
 
 if(space == true) {
 velocityX = -12;
@@ -150,7 +146,7 @@ if(playerX < obs5X){
 
 void reset() {
 //sjekker om player kommer bort i veggene, dersom den gjør det blir spillet resett
-if(playerX - playerHeight < 0 || playerY - playerWidth < 0 || playerY  > 500 || playerX  > 700) {
+if(playerX - playerHeight < 0 || playerY - playerWidth < 0 || playerY  > 500 || playerX - playerHeight/2 > 700) {
 setup();
 }
 
