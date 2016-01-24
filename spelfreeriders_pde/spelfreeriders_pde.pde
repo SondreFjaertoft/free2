@@ -48,11 +48,14 @@ void setup(){
   obs = loadImage("obs.png");
   
   gravity = 0.5;
+  
+  textAlign(CENTER, CENTER);
 }
 
 
 void draw(){
 imageMode(CENTER);
+
 background(bg);
 obstacles();
 player();
@@ -147,30 +150,45 @@ if(playerX < obs5X){
 void reset() {
 //sjekker om player kommer bort i veggene, dersom den gjør det blir spillet resett
 if(playerX - playerHeight < 0 || playerY - playerWidth < 0 || playerY  > 500 || playerX - playerHeight/2 > 700) {
-setup();
+gameOverPage();
 }
 
 //høgre hinder nr 1
 if(playerX - playerHeight < obs1X && playerY > obs1Y && playerX > obs1X + 20){
-setup();
+gameOverPage();
 } 
 
 //venstre hinder nr2
 else if(playerX - playerHeight < obs2X && playerY -playerWidth < obs2Y && playerX> obs2X + 20){
-setup();
+gameOverPage();
 } 
 
 //høgre hinder nr 3
 if(playerX - playerHeight < obs3X && playerY > obs3Y && playerX > obs3X + 20){
-setup();
+gameOverPage();
 } 
 
 //venstre hinder nr 4
 if(playerX - playerHeight < obs5X && playerY - playerWidth< obs5Y && playerX > obs5X + 20){
-setup();
+gameOverPage();
 } 
+}
 
 
+void gameOverPage(){
+
+
+velocityX = 0;
+moveSpeed = 0;
+text("Game Over", width/2, height/2 - 80);
+text("Click to play again", width/2, height/2 );
+text("Your score is: " + score, width/2, height/2 + 80);
+
+
+
+if(mousePressed) {
+setup();
+}
 }
 
 
