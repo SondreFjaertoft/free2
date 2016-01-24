@@ -1,4 +1,3 @@
-
 //obsticles X position
 int obs1X,obs2X, obs3X, obs4X, obs5X;
 int obs1Y,obs2Y, obs3Y, obs4Y, obs5Y;
@@ -14,14 +13,19 @@ PImage img, bg, star, obs;
 
 int score;
 
+float gravity = 0.5;
+float velocityX, velocityY;
+
+
 void setup(){
- size(    500,700);
+ size(500,700);
  
-  obs1X = 400; 
-  obs2X = 170; 
-  obs3X = -150; 
-  obs4X = 0; 
-  obs5X = -350;
+ 
+  obs1X = 0;
+  obs2X = -230;
+  obs3X = -400; 
+  obs4X = -320; 
+  obs5X = -650;
   
   obs1Y = 200 ;
   obs2Y = 200 ;
@@ -34,7 +38,7 @@ void setup(){
   playerWidth = 60;
   playerHeight = 50;
   playerY = width/2;
-  playerX = 700;
+  playerX = height/2;
 
   score = 0;
   
@@ -42,6 +46,12 @@ void setup(){
   bg = loadImage("background.png");
   star = loadImage("star.png");
   obs = loadImage("obs.png");
+  
+  
+  playerX += velocityX * 0.5;
+  playerY += velocityY * 0.5;
+  velocityY += gravity * 0.5;
+  
 }
 
 
@@ -55,6 +65,7 @@ jump();
 score();
 reset();
 star();
+
 }
 
 
@@ -94,14 +105,14 @@ image(img, playerY - playerWidth/2, playerX - playerHeight/2, playerWidth, playe
 
 
 void jump(){
-  
-if(space == true && playerX - playerHeight > 0) {
- playerX = playerX - 12;
-}
-else if(playerX < 700 ) {
- playerX = playerX + 6;
+playerX += velocityX  ; 
+velocityX += gravity ;
+
+if(space == true) {
+velocityX = -12;
 }
 
+ 
 
 if(left == true && playerY - playerWidth > 0){
   playerY = playerY-6;
@@ -139,7 +150,7 @@ if(playerX < obs5X){
 
 void reset() {
 //sjekker om player kommer bort i veggene, dersom den gjør det blir spillet resett
-if(playerX - playerHeight < 0 || playerY - playerWidth < 0 || playerY  > 500 ) {
+if(playerX - playerHeight < 0 || playerY - playerWidth < 0 || playerY  > 500 || playerX  > 700) {
 setup();
 }
 
