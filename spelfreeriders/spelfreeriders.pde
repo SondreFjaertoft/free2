@@ -7,7 +7,7 @@ int moveSpeed;
 //player
 float playerWidth, playerHeight, playerY, playerX;
 
-boolean left, right, space; 
+boolean left, right, space, start; 
 
 PImage img, bg, star, obs;
 
@@ -15,6 +15,8 @@ int score;
 
 float gravity;
 float velocityX;
+float velocityY;
+
 
 
 void setup(){
@@ -34,6 +36,7 @@ void setup(){
   obs5Y = 300;
 
   moveSpeed = 1;
+  velocityY = 6;
   
   playerWidth = 60;
   playerHeight = 50;
@@ -41,13 +44,16 @@ void setup(){
   playerX = height/2;
 
   score = 0;
+  textSize(40);
+  start = false;
   
   img = loadImage("flyingCow.png");
   bg = loadImage("background.png");
   star = loadImage("star.png");
   obs = loadImage("obs.png");
   
-  gravity = 0.5;
+  gravity = 0.6;
+  
   
   textAlign(CENTER, CENTER);
 }
@@ -55,15 +61,8 @@ void setup(){
 
 void draw(){
 imageMode(CENTER);
-
 background(bg);
-obstacles();
-player();
-obstacleMove();
-jump();
-score();
-reset();
-star();
+gameStartPage();
 
 }
 
@@ -108,24 +107,24 @@ playerX += velocityX;
 velocityX += gravity;
 
 if(space == true) {
-velocityX = -12;
+velocityX = -10;
 }
 
  
 
 if(left == true && playerY - playerWidth > 0){
-  playerY = playerY-6;
+  playerY = playerY- velocityY;
 }
 
 if(right == true && playerY  < 500){
-  playerY = playerY +6;
+  playerY = playerY +velocityY;
 }
 
 }
 
 void score(){
   
-textSize(40);
+
 text(score,40,50);  
   
 if(playerX < obs1X){
@@ -174,17 +173,29 @@ gameOverPage();
 } 
 }
 
+void gameStartPage(){
+text("click to start", width/2, height/2 - 80);
+if(start == true){
+background(bg);
+obstacles();
+player();
+obstacleMove();
+jump();
+score();
+reset();
+star();
+}
+
+}
 
 void gameOverPage(){
 
-
 velocityX = 0;
 moveSpeed = 0;
+velocityY = 0;
 text("Game Over", width/2, height/2 - 80);
 text("Click to play again", width/2, height/2 );
 text("Your score is: " + score, width/2, height/2 + 80);
-
-
 
 if(mousePressed) {
 setup();
@@ -202,9 +213,11 @@ void keyPressed() {
     right = true;
   }
   
+  
   if(keyCode == ' ') {
     space = true;
   }
+  
 }
 
 
@@ -218,7 +231,15 @@ void keyReleased() {
     right = false;
   }
   
+ 
+  
   if(keyCode == ' ') {
     space = false;
   }
+}
+
+void mousePressed(){
+if (mousePressed == true){
+start = true;
+}
 }
