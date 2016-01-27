@@ -34,9 +34,9 @@ text("click to start", width/2, height/2 - 80);
 if(start == true){
   
 background(bg);
-obstacles.obstaclesDisplay();
+obstacles.obstacles();
 player.player();
-obstacles.obstacleMove();
+obstacles.obstacles();
 gravity.jump();
 score.playerScore();
 reset.gameOver();
@@ -49,7 +49,7 @@ awards.starDisplay();
 void gameOverPage(){
 
 gravity.velocityX = 0;
-obstacles.moveSpeed = 0;
+//obstacles.moveSpeed = 0;
 gravity.velocityY = 0;
 text("Game Over", width/2, height/2 - 80);
 text("Click to play again", width/2, height/2 );

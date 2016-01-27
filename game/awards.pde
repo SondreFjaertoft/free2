@@ -13,6 +13,6 @@ star = loadImage("star.png");
 //FUNCTIONS
 
 void starDisplay(){
-image(star, obstacles.obs4Y,obstacles.obs4X, 50, 50);
+image(star, 500, 400, 50, 50);
 }
 }
