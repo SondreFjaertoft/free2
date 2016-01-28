@@ -1,11 +1,11 @@
-ObstaclesDisplay [] obstaclesCollection = new ObstaclesDisplay[3];
+ObstaclesDisplay [] obstaclesCollection = new ObstaclesDisplay[2];
 
 class Obstacles{
 
   
   
 Obstacles(){
-for (int i =  0; i < 3; i++) {
+for (int i =  0; i < 2; i++) {
     obstaclesCollection[i] = new ObstaclesDisplay(i);
   }
 
@@ -13,12 +13,15 @@ for (int i =  0; i < 3; i++) {
 
 
 void obstacles(int s){
-  for(int i = 0; i < 3; i++){
+  for(int i = 0; i < 2; i++){
   obstaclesCollection[i].obstaclesCreateRight();
   obstaclesCollection[i].obstaclesCreateLeft();
   obstaclesCollection[i].obstaclesMove(s);
+  obstaclesCollection[i].CreateNew();
 }
 }
+
+
 
 
 

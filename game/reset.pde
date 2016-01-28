@@ -15,7 +15,7 @@ Reset(){
 //FUNCTIONS
 void gameOver() {
 //sjekker om player kommer bort i veggene, dersom den gjør det blir spillet resett
-if(player.playerX - player.playerHeight < 0 || player.playerY - player.playerWidth < 0 || player.playerY  > 500 || player.playerX - player.playerHeight/2 > 700) {
+if(player.playerX - player.playerHeight/2 < 0 || player.playerY - player.playerWidth < 0 || player.playerY  > width || player.playerX - player.playerHeight/2 > 700) {
 gameEngine.gameOverPage();
 }
 

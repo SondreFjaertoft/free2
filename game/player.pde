@@ -21,7 +21,8 @@ void display() {
 }
 
 void player() {
-image(img, playerY - playerWidth/2, playerX - playerHeight/2, playerWidth, playerHeight);
+imageMode(CENTER);
+image(img, playerY, playerX, playerWidth, playerHeight);
 //rect(playerY - playerWidth/2, playerX - playerHeight, playerWidth, playerHeight);
 }
 
