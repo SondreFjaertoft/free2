@@ -1,20 +1,22 @@
-ObstaclesDisplay [] obstaclesCollection = new ObstaclesDisplay[20];
+ObstaclesDisplay [] obstaclesCollection = new ObstaclesDisplay[3];
 
 class Obstacles{
 
   
   
 Obstacles(){
-for (int i =  0; i < 20; i++) {
+for (int i =  0; i < 3; i++) {
     obstaclesCollection[i] = new ObstaclesDisplay(i);
   }
 
 }
 
 
-void obstacles(){
-  for(int i = 0; i < 20; i++){
-  obstaclesCollection[i].obstaclesRun();
+void obstacles(int s){
+  for(int i = 0; i < 3; i++){
+  obstaclesCollection[i].obstaclesCreateRight();
+  obstaclesCollection[i].obstaclesCreateLeft();
+  obstaclesCollection[i].obstaclesMove(s);
 }
 }
 

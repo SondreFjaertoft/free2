@@ -2,7 +2,8 @@
 class ObstaclesDisplay{
 PImage obs;
 float obstaclesY;
-float obstaclesX;
+float obstaclesRX;
+float obstaclesLX;
 //movement speed of obsticles
 int moveSpeed;
 
@@ -10,12 +11,11 @@ int moveSpeed;
 
 
 // CONSTRUCTOR
-ObstaclesDisplay(float _x){
-  
-  obstaclesX = _x;
+ObstaclesDisplay(int i){
+  obstaclesRX = - 1200+(i*600);
+  obstaclesLX = - 1500+(i*600);
   obs = loadImage("obs.png");
   obstaclesY = random(100, 300);
- 
   moveSpeed = 1;
 }
 
@@ -23,18 +23,24 @@ ObstaclesDisplay(float _x){
 
 
 
-void obstaclesRun(){
-obstaclesCreate();
-obstaclesMove();
 
+
+void obstaclesMove(int s){
+moveSpeed = s;
+obstaclesRX = obstaclesRX + moveSpeed;
+obstaclesLX = obstaclesLX + moveSpeed;
 }
 
-void obstaclesMove(){
-obstaclesX = obstaclesX + moveSpeed;
-}
-
-void obstaclesCreate(){
+void obstaclesCreateRight(){
  imageMode(CORNER);
- image(obs, obstaclesY, obstaclesX, 500-obstaclesY, 20);
+ image(obs, obstaclesY, obstaclesRX, 500-obstaclesY, 20);
  imageMode(CENTER);}
+
+
+void obstaclesCreateLeft(){
+ imageMode(CORNER);
+ image(obs, 0, obstaclesLX, obstaclesY, 20);
+ imageMode(CENTER);}
+
+
 }

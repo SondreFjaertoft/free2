@@ -1,3 +1,5 @@
+
+
 class Reset{
 //GLOBAL VARIABLES
 
@@ -17,8 +19,8 @@ if(player.playerX - player.playerHeight < 0 || player.playerY - player.playerWid
 gameEngine.gameOverPage();
 }
 
-////høgre hinder nr 1
-//if(player.playerX - player.playerHeight < obstacles.obs1X && player.playerY > obstacles.obs1Y && player.playerX > obstacles.obs1X + 20){
+//høgre hinder nr 1
+//if(player.playerX - player.playerHeight < obstacles.obstaclesX && player.playerY > obstacles.obs1Y && player.playerX > obstacles.obs1X + 20){
 //gameEngine.gameOverPage();
 //} 
 

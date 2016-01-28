@@ -8,7 +8,7 @@ Score score;
 class GameEngine{
 // GLOBAL VARIABLES
 PImage bg;
-  
+int moveSpeed = 1;  
 
   
 //CONSTRUCTOR
@@ -19,6 +19,7 @@ awards = new Awards();
 reset = new Reset();
 gravity = new Gravity();
 score = new Score();
+
 
 bg = loadImage("background.png");
 
@@ -34,9 +35,8 @@ text("click to start", width/2, height/2 - 80);
 if(start == true){
   
 background(bg);
-obstacles.obstacles();
+obstacles.obstacles(moveSpeed);
 player.player();
-obstacles.obstacles();
 gravity.jump();
 score.playerScore();
 reset.gameOver();
@@ -49,7 +49,7 @@ awards.starDisplay();
 void gameOverPage(){
 
 gravity.velocityX = 0;
-//obstacles.moveSpeed = 0;
+moveSpeed = 0;
 gravity.velocityY = 0;
 text("Game Over", width/2, height/2 - 80);
 text("Click to play again", width/2, height/2 );
