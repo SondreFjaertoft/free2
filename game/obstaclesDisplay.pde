@@ -43,7 +43,7 @@ void obstaclesCreateLeft(){
  image(obs, 0, obstaclesLX, obstaclesLY, 20);
 }
 
-void CreateNew(){
+void obstacleCreateNew(){
 if( obstaclesRX > 700){
     obstaclesRX = -300;
 }

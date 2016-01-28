@@ -20,7 +20,7 @@ gameEngine.gameOverPage();
 }
 
 //høgre hinder nr 1
-//if(player.playerX - player.playerHeight < obstacles.obstaclesX && player.playerY > obstacles.obs1Y && player.playerX > obstacles.obs1X + 20){
+//if(player.playerX - player.playerHeight < obstacles.obstaclesRX && player.playerY > obstacles.obs1Y && player.playerX > obstacles.obs1X + 20){
 //gameEngine.gameOverPage();
 //} 
 

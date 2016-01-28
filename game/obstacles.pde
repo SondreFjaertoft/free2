@@ -17,7 +17,7 @@ void obstacles(int s){
   obstaclesCollection[i].obstaclesCreateRight();
   obstaclesCollection[i].obstaclesCreateLeft();
   obstaclesCollection[i].obstaclesMove(s);
-  obstaclesCollection[i].CreateNew();
+  obstaclesCollection[i].obstacleCreateNew();
 }
 }
 

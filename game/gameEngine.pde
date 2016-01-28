@@ -8,7 +8,7 @@ Score score;
 class GameEngine{
 // GLOBAL VARIABLES
 PImage bg;
-int moveSpeed = 1;  
+int moveSpeed = 2;  
 
   
 //CONSTRUCTOR
