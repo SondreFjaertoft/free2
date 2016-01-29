@@ -12,7 +12,7 @@ for (int i =  0; i < 2; i++) {
 }
 
 
-void obstacles(int s){
+void obstacles(float s){
   for(int i = 0; i < 2; i++){
   obstaclesCollection[i].obstaclesCreateRight();
   obstaclesCollection[i].obstaclesCreateLeft();

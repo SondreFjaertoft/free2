@@ -18,6 +18,7 @@ velocityY = 6;
 
 //FUNCTIONS
 void jump(){
+imageMode(CENTER);
 player.playerX += velocityX; 
 velocityX += gravity;
 
@@ -27,7 +28,7 @@ velocityX = -10;
 
  
 
-if(left == true && player.playerY - player.playerWidth > 0){
+if(left == true && player.playerY + player.playerWidth > 0){
   player.playerY = player.playerY- velocityY;
 }
 

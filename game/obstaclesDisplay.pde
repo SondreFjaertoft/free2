@@ -1,3 +1,5 @@
+
+
 // GLOBAL VARIABLES
 class ObstaclesDisplay{
 PImage obs;
@@ -6,7 +8,7 @@ float obstaclesLY;
 float obstaclesRX;
 float obstaclesLX;
 //movement speed of obsticles
-int moveSpeed;
+float moveSpeed;
 
 
 
@@ -18,7 +20,7 @@ int moveSpeed;
   obs = loadImage("obs.png");
   obstaclesRY = random(100, 300);
   obstaclesLY = random(150, 400);
-  moveSpeed = 1;
+ 
 }
 
 // FUNCTIONS
@@ -27,7 +29,7 @@ int moveSpeed;
 
 
 
-void obstaclesMove(int s){
+void obstaclesMove(float s){
 moveSpeed = s;
 obstaclesRX = obstaclesRX + moveSpeed;
 obstaclesLX = obstaclesLX + moveSpeed;

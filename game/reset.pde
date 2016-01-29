@@ -7,7 +7,7 @@ class Reset{
 
 //CONSTRUCTOR
 Reset(){
-
+imageMode(CENTER);
 
 }
 
@@ -15,31 +15,23 @@ Reset(){
 //FUNCTIONS
 void gameOver() {
 //sjekker om player kommer bort i veggene, dersom den gjør det blir spillet resett
-if(player.playerX - player.playerHeight/2 < 0 || player.playerY - player.playerWidth < 0 || player.playerY  > width || player.playerX - player.playerHeight/2 > 700) {
+if(player.playerX - player.playerHeight/2 < 0 || player.playerY - player.playerWidth/2 < 0 || player.playerY + player.playerWidth/2 > width || player.playerX + player.playerHeight/2 > height) {
 gameEngine.gameOverPage();
 }
 
-//høgre hinder nr 1
-//if(player.playerX - player.playerHeight < obstacles.obstaclesRX && player.playerY > obstacles.obs1Y && player.playerX > obstacles.obs1X + 20){
-//gameEngine.gameOverPage();
-//} 
+//høgre hinder 
+for(int i = 0; i < 2; i++){
+if(player.playerX - player.playerHeight < obstaclesCollection[i].obstaclesRX && player.playerY + player.playerWidth/2 > obstaclesCollection[i].obstaclesRY && player.playerX + player.playerHeight > obstaclesCollection[i].obstaclesRX + 20){
+gameEngine.gameOverPage();
+} 
 
-////venstre hinder nr2
-//else if(player.playerX - player.playerHeight < obstacles.obs2X && player.playerY -player.playerWidth < obstacles.obs2Y && player.playerX> obstacles.obs2X + 20){
-//gameEngine.gameOverPage();
-//} 
+//venstre hinder 
+else if(player.playerX - player.playerHeight < obstaclesCollection[i].obstaclesLX && player.playerY -player.playerWidth/2 < obstaclesCollection[i].obstaclesLY && player.playerX + player.playerHeight> obstaclesCollection[i].obstaclesLX + 20){
+gameEngine.gameOverPage();
+} 
 
-////høgre hinder nr 3
-//if(player.playerX - player.playerHeight < obstacles.obs3X && player.playerY > obstacles.obs3Y && player.playerX > obstacles.obs3X + 20){
-//gameEngine.gameOverPage();
-//} 
 
-////venstre hinder nr 4
-//if(player.playerX - player.playerHeight < obstacles.obs5X && player.playerY - player.playerWidth< obstacles.obs5Y && player.playerX > obstacles.obs5X + 20){
-//gameEngine.gameOverPage();
-//} 
 }
 
-
-
+}
 }
