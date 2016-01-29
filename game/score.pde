@@ -19,14 +19,20 @@ void playerScore(){
   
 
 text(points,40,50);  
-  
-//if(player.playerX < obstacles.obs1X){
-//  points =  1;
-//}
 
-//if(player.playerX < obstacles.obs2X){
-//  points =  2;
-//}
+for(int i = 0; i < 2; i++){  
+if(player.playerX < obstaclesCollection[i].obstaclesRX && obstaclesCollection[0].cashedR ==false){
+ obstaclesCollection[0].cashedR = true;
+  points++;
+}
+
+if(player.playerX < obstaclesCollection[i].obstaclesLX && obstaclesCollection[0].cashedL ==false){
+ obstaclesCollection[0].cashedL = true;
+  points++;
+}
+}
+
+
 
 //if(player.playerX < obstacles.obs3X){
 //  points = 3;

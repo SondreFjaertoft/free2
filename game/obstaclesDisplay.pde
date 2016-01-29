@@ -7,6 +7,8 @@ float obstaclesRY;
 float obstaclesLY;
 float obstaclesRX;
 float obstaclesLX;
+boolean cashedL;
+boolean cashedR;
 //movement speed of obsticles
 float moveSpeed;
 
@@ -46,12 +48,15 @@ void obstaclesCreateLeft(){
 }
 
 void obstacleCreateNew(){
+  
 if( obstaclesRX > 700){
     obstaclesRX = -300;
+    cashedR = false;
 }
 
 if( obstaclesLX > 700){
  obstaclesLX = -300;
+ cashedL = false;
 }
 }
 
