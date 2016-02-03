@@ -40,5 +40,13 @@ if(player.playerX < obstaclesCollection[1].obstaclesLX && obstaclesCollection[1]
   points++;
 }
 
-} 
+
+//bonus poeng!
+
+if(player.playerX > awards.starX - 25 && player.playerX < awards.starX + 25 && player.playerY > awards.starY - 25 && player.playerY < awards.starY + 25){
+  points = points + 10;
+  awards.starX = 750;
+}
+}
+ 
 }

@@ -40,7 +40,7 @@ player.player();
 gravity.jump();
 score.playerScore();
 reset.gameOver();
-awards.starDisplay();
+awards.star();
 
 }
 }
