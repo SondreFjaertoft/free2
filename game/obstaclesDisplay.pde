@@ -54,10 +54,13 @@ if( obstaclesRX > 700){
     cashedR = false;
 }
 
+
+
 if( obstaclesLX > 700){
  obstaclesLX = -300;
  cashedL = false;
 }
-}
 
+
+}
 }
