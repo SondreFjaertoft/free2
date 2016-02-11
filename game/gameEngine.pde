@@ -56,7 +56,7 @@ text("Game Over", width/2, height/2 - 80);
 text("Click to play again", width/2, height/2 );
 text("Your score is: " + score.points, width/2, height/2 + 80);
 
-if(mousePressed) {
+if(reStart == true) {
 setup();
 }
 } 

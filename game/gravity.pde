@@ -23,9 +23,10 @@ player.playerX += velocityX;
 velocityX += gravity;
 
 if(space == true) {
-velocityX = -10;
+velocityX = -12;
+space = false;
 }
-
+space = false;
  
 
 if(left == true && player.playerY + player.playerWidth > 0){

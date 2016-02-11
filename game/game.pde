@@ -1,4 +1,4 @@
-boolean left, right, space, start;
+boolean left, right, space, start, reStart;
 GameEngine gameEngine;
 
 
@@ -23,7 +23,9 @@ void keyPressed() {
   
   
   if(keyCode == ' ') {
-    space = true;}
+    space = true;
+    start = true;
+    reStart = true;}
   }
 
 
@@ -37,7 +39,8 @@ void keyReleased() {
  
   
   if(keyCode == ' ') {
-    space = false;}
+    space = false;
+    reStart = false;}
 }
 
 void mousePressed(){
