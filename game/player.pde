@@ -11,7 +11,7 @@ Player() {
   playerY = width/2;
   playerX = height/2;
   
-  img = loadImage("flyingCow.png");
+  img = loadImage("Apekatt2.png");
 }
 
 
