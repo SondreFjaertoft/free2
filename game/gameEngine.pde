@@ -4,7 +4,7 @@ Awards awards;
 Reset reset;
 Gravity gravity;
 Score score;
-//Sound sound;
+Sound sound;
 
 class GameEngine{
 // GLOBAL VARIABLES
@@ -22,7 +22,7 @@ gravity = new Gravity();
 score = new Score();
 //sound = new Sound();
 
-bg = loadImage("Beste.png");
+bg = loadImage("backgroundtest.jpg");
 
 }
 

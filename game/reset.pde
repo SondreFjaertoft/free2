@@ -1,4 +1,4 @@
-Sound sound;
+
 
 class Reset{
 //GLOBAL VARIABLES
