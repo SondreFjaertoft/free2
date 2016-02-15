@@ -1,23 +1,47 @@
 class Score{
 // GLOBAL VARIABLES
 int points;
-
-
+String highScore;
+int newHighScore;
 
 
 //CONSTRUCTOR
 Score(){
 points = 0;
 
+}
 
+
+
+//FUNCTIONS
+
+void saveScore(){
+  //save score
+highScore = ("" + score.points);
+String[] list = split(highScore, ' ');
+saveStrings("test.txt", list);
+}
+
+void listScore(){
+text("Your high score is: " + newHighScore,  width/2, height/2 + 140);
+
+}
+
+void checkScore(){
+ String lines[] = loadStrings("test.txt");
+//text("Your high score is: " + lines[0],  width/2, height/2 + 140);
+newHighScore = parseInt(lines[0]);
+//text("Your high score is: " + newHighScore,  width/2, height/2 + 140);
+if(points > newHighScore){
+saveScore();
+
+}
 
 }
 
 
-//FUNCTIONS
 void playerScore(){
   
-
 text(points,40,50);  
  
 if(player.playerX < obstaclesCollection[0].obstaclesRX && obstaclesCollection[0].cashedR ==false){
