@@ -5,6 +5,7 @@ class Sound{
 
 AudioPlayer bonusPoint;
 AudioPlayer regularPoint;
+AudioPlayer deathSound;
 Minim minim;//audio context
 
 
@@ -22,6 +23,13 @@ void soundObstacle()
   
   regularPoint.rewind();
   regularPoint.play();
+}
+
+void soundDeath()
+{
+  minim = new Minim(this);
+  deathSound.rewind();
+  deathSound.play();
 }
 
 void soundStop()
