@@ -1,22 +1,29 @@
+
 import ddf.minim.*;
 class Sound{
   
-  
-AudioPlayer background;
+
+AudioPlayer bonusPoint;
+AudioPlayer regularPoint;
 Minim minim;//audio context
 
-void setup()
+void soundBanana()
 {
   minim = new Minim(this);
-  background = minim.loadFile("background_sound.mp3", 2048);
-  background.play();
+  bonusPoint = minim.loadFile("banana_sound.mp3", 2048);
+  bonusPoint.rewind();
+  bonusPoint.play();
 }
 
-void draw()
+void soundObstacle()
 {
+  minim = new Minim(this);
+  regularPoint = minim.loadFile("point_sound.mp3", 2048);
+  regularPoint.rewind();
+  regularPoint.play();
 }
 
-void stop()
+void soundStop()
 {
   background.close();
   minim.stop();
