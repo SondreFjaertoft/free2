@@ -22,7 +22,7 @@ gravity = new Gravity();
 score = new Score();
 sound = new Sound();
 
-bg = loadImage("background.png");
+bg = loadImage("Beste.png");
 
 }
 
