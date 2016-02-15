@@ -52,6 +52,7 @@ void obstacleCreateNew(){
 if( obstaclesRX > 700){
     obstaclesRX = -300;
     cashedR = false;
+    obstaclesRY = random(100, 300);
 }
 
 
@@ -59,6 +60,7 @@ if( obstaclesRX > 700){
 if( obstaclesLX > 700){
  obstaclesLX = -300;
  cashedL = false;
+ obstaclesLY = random(150, 400);
 }
 
 
