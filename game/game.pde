@@ -12,7 +12,8 @@ gameEngine = new GameEngine();    //makes a new object of GameEngine
   minim = new Minim(this);
   background = minim.loadFile("background_sound.mp3", 2048);
   background.play();
-
+  sound.bonusPoint = minim.loadFile("banana_sound.mp3", 2048);
+  sound.regularPoint = minim.loadFile("point_sound.mp3", 2048);
 }
 
 
