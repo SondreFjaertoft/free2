@@ -19,7 +19,7 @@ float moveSpeed;
   ObstaclesDisplay(int i){
   obstaclesRX = - 500+(i*500);
   obstaclesLX = - 750+(i*500);
-  obs = loadImage("obs.png");
+  obs = loadImage("Grein.png");
   obstaclesRY = random(100, 300);
   obstaclesLY = random(150, 400);
  
