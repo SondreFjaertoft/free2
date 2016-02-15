@@ -10,6 +10,7 @@ float velocityY;
 Gravity(){
 gravity = 0.5;
 velocityY = 6;
+space = false;
 }
 
 
@@ -26,7 +27,7 @@ if(space == true) {
 velocityX = -12;
 space = false;
 }
-space = false;
+
  
 
 if(left == true && player.playerY + player.playerWidth > 0){

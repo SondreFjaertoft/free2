@@ -49,16 +49,18 @@ score.checkScore();
 
 
 void gameOverPage(){
-gravity.velocityX = 0;
-moveSpeed = 0;
+//gravity.velocityX = 0;
 gravity.velocityY = 0;
+moveSpeed = 0;
+gravity.gravity = 3;
 awards.moveSpeedStar = 0;
+if(player.playerX > 750){
 text("Game Over", width/2, height/2 - 80);
 text("Click to play again", width/2, height/2 );
 text("Your score is: " + score.points, width/2, height/2 + 80);
 score.listScore();if(reStart == true) {
 setup();
-}
+}}
 } 
 
 void backgroundImage(){
