@@ -9,6 +9,7 @@ int newHighScore;
 Score(){
 points = 0;
 
+
 }
 
 
@@ -41,7 +42,7 @@ saveScore();
 
 
 void playerScore(){
-  
+
 text(points,40,50);  
  
 if(player.playerX < obstaclesCollection[0].obstaclesRX && obstaclesCollection[0].cashedR ==false){

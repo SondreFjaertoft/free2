@@ -1,10 +1,18 @@
 boolean left, right, space, start, reStart;
 GameEngine gameEngine;
 
+import ddf.minim.*;
+AudioPlayer background;
+Minim minim;//audio context
 
 void setup(){
 size(500,700);                    //sets a size for the window
 gameEngine = new GameEngine();    //makes a new object of GameEngine
+
+  minim = new Minim(this);
+  background = minim.loadFile("background_sound.mp3", 2048);
+  background.play();
+
 }
 
 

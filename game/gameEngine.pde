@@ -49,6 +49,8 @@ score.checkScore();
 
 
 void gameOverPage(){
+
+  
 //gravity.velocityX = 0;
 gravity.velocityY = 0;
 moveSpeed = 0;
