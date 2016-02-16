@@ -49,21 +49,23 @@ score.checkScore();
 
 
 void gameOverPage(){
-
  
+ sound.soundDeath();
 //gravity.velocityX = 0;
 gravity.velocityY = 0;
 moveSpeed = 0;
 gravity.gravity = 3;
 awards.moveSpeedStar = 0;
-if(player.playerX > 750){
+if(player.playerX > 800){
 text("Game Over", width/2, height/2 - 80);
 text("Click to play again", width/2, height/2 );
 text("Your score is: " + score.points, width/2, height/2 + 80);
-score.listScore();if(reStart == true) {
-background.close();
-//minim.stop();
-//super.stop();
+score.listScore();
+
+if(reStart == true) {
+sound.BackgroundSoundStop();
+sound.soundDeathStop();
+
 setup();
 }}
 } 

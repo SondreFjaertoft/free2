@@ -52,6 +52,7 @@ if(player.playerX < obstaclesCollection[0].obstaclesRX && obstaclesCollection[0]
  obstaclesCollection[0].cashedR = true;
   points++;
   sound.soundObstacle();
+   
 }
 
 if(player.playerX < obstaclesCollection[0].obstaclesLX && obstaclesCollection[0].cashedL ==false){

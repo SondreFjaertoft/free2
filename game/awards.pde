@@ -8,7 +8,7 @@ float starY;
 
 //CONSTRUCTOR
 Awards(){
-star = loadImage("star.png");
+star = loadImage("Banana.png");
 moveSpeedStar = 2;
 starX = random (-1300, -1700);
 starY = random ( 70, 470);
@@ -31,7 +31,7 @@ starX = starX + moveSpeedStar;
 
 void starDisplay(){
 imageMode(CENTER);  
-image(star, starY, starX, 50, 50);
+image(star, starY, starX, 55, 55);
 }
 
 void starReset(){

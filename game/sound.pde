@@ -1,12 +1,12 @@
 
-import ddf.minim.*;
+
 class Sound{
   
 
 AudioPlayer bonusPoint;
 AudioPlayer regularPoint;
 AudioPlayer deathSound;
-Minim minim;//audio context
+
 
 
 void soundBanana()
@@ -30,15 +30,25 @@ void soundDeath()
   minim = new Minim(this);
   deathSound.rewind();
   deathSound.play();
+ 
 }
 
-void soundStop()
+void BackgroundSoundStop()
 {
   background.close();
   minim.stop();
-  //super.stop();
 }
  
- 
+void soundDeathStop()
+{
+  deathSound.close();
+  minim.stop();
+} 
+
+void soundObstacleStop()
+{
+  regularPoint.close();
+  minim.stop();
+} 
   
 }
