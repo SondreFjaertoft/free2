@@ -27,9 +27,9 @@ void soundObstacle()
 
 void soundDeath()
 {
-  minim = new Minim(this);
-  deathSound.rewind();
-  deathSound.play();
+  //minim = new Minim(this);
+ // deathSound.rewind();
+  deathSound.play(600);
  
 }
 

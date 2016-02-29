@@ -10,7 +10,7 @@ class GameEngine{
 // GLOBAL VARIABLES
 PImage bg;
 float moveSpeed = 2;  
-
+private boolean soundHaveBeenPlayed = false;
   
 //CONSTRUCTOR
 GameEngine(){
@@ -49,8 +49,11 @@ score.checkScore();
 
 
 void gameOverPage(){
- 
+ if(!soundHaveBeenPlayed){
  sound.soundDeath();
+ soundHaveBeenPlayed = true;
+ }
+ 
 //gravity.velocityX = 0;
 gravity.velocityY = 0;
 moveSpeed = 0;
@@ -65,7 +68,6 @@ score.listScore();
 if(reStart == true) {
 sound.BackgroundSoundStop();
 sound.soundDeathStop();
-
 setup();
 }}
 } 
