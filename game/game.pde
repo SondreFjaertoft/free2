@@ -1,5 +1,6 @@
-boolean left, right, space, start, reStart;
+boolean left, right, space, start, reStart, mouse;
 GameEngine gameEngine;
+MainMenu mainMenu;
 
 import ddf.minim.*;
 AudioPlayer background;
@@ -9,6 +10,7 @@ void setup(){
  
 size(500,700);                    //sets a size for the window
 gameEngine = new GameEngine();    //makes a new object of GameEngine
+mainMenu = new MainMenu();
 
   minim = new Minim(this);
   background = minim.loadFile("background_sound.mp3", 2048);
@@ -22,7 +24,8 @@ gameEngine = new GameEngine();    //makes a new object of GameEngine
 void draw(){
 imageMode(CENTER);                       //draws the background image
 gameEngine.backgroundImage();
-gameEngine.gameStartPage();
+//gameEngine.gameStartPage();
+mainMenu.menu();
 }
 
 void keyPressed() {
@@ -56,5 +59,7 @@ void keyReleased() {
 
 void mousePressed(){              //checks if mousekey is pressed
 if (mousePressed ){
-start = true;}
+start = true;
+mouse = true;
+} 
 } 
