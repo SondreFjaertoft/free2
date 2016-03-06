@@ -1,6 +1,6 @@
 class MainMenu{ 
 // GLOBAL VARIABLES
-PImage playImg, highScoreImg, setupImg;
+PImage playImg, highScoreImg, setupImg, menuImg;
 float playWidth, playHeight, playY, playX, highScoreWidth, highScoreHeight, highScoreY, highScoreX, setupWidth, setupHeight, setupY, setupX;
 boolean playGame,clearGame;
 
@@ -25,6 +25,7 @@ MainMenu(){
   playImg = loadImage("playImg.png");
   highScoreImg = loadImage("highScoreImg.png");
   setupImg = loadImage("setupImg.png");
+  menuImg = loadImage("menyImg.png");
 }
 
 
