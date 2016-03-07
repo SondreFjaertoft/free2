@@ -54,6 +54,7 @@ if(mouseX > playY - 100 && mouseX < playY + 100 && mouseY > playX - 25 && mouseY
 playGame = true;
 mouse = false;
 clearGame = true;
+
 }
 }
 

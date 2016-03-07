@@ -54,7 +54,8 @@ void keyReleased() {
   
   if(keyCode == ' ') {             // checks if "space" bar is released
     space = false;
-    reStart = false;}
+    reStart = false;
+  }
 }
 
 void mousePressed(){              //checks if mousekey is pressed
