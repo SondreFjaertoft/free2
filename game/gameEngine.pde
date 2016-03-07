@@ -12,7 +12,7 @@ class GameEngine{
 PImage bg;
 float moveSpeed = 2;  
 private boolean soundHaveBeenPlayed = false;
-
+boolean checkReset = false;
   
 //CONSTRUCTOR
 GameEngine(){
@@ -52,11 +52,11 @@ score.checkScore();
 
 
 void gameOverPage(){
- if(!soundHaveBeenPlayed){
+ if(soundHaveBeenPlayed == false){
  sound.soundDeath();
  soundHaveBeenPlayed = true;
  }
- 
+
 //gravity.velocityX = 0;
 gravity.velocityY = 0;
 moveSpeed = 0;
@@ -68,16 +68,19 @@ text("Click to play again", width/2, height/2 );
 text("Your score is: " + score.points, width/2, height/2 + 80);
 score.listScore();
 image(mainMenu.menuImg, mainMenu.playY, mainMenu.playX + 300, mainMenu.playWidth, mainMenu.playHeight);
+
 if(mouseX > mainMenu.playY - 100 && mouseX < mainMenu.playY + 100 && mouseY > mainMenu.playX - 25 + 300 && mouseY < mainMenu.playX +25 + 300 && mouse == true){
 mouse = false;
 mainMenu.playGame = false;
-
+}
+}
+if(reStart == true ) {
+gameEngine.soundHaveBeenPlayed = false;
+replay();
 }
 
-if(reStart == true) {
-replay();
-}}
-} 
+
+}
 
 void replay(){
 gravity.velocityY = 6;

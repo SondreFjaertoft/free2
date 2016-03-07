@@ -37,6 +37,8 @@ void menu(){
 createMenu();
 menuPlay();
 menuPlayStart();
+resetGame();
+menuHeighScore();
 }
 
 void createMenu(){
@@ -47,21 +49,37 @@ image(highScoreImg, highScoreY, highScoreX, highScoreWidth, highScoreHeight);
 }
 
 void menuPlay(){
+ clearGame = false;
 if(mouseX > playY - 100 && mouseX < playY + 100 && mouseY > playX - 25 && mouseY < playX +25 && mouse == true){
 playGame = true;
 mouse = false;
+clearGame = true;
 }
 }
 
 void menuPlayStart(){
 if(playGame == true){
-
 gameEngine.gameStartPage();
+}
+}
+void resetGame(){
+if(clearGame == true){
+reStart = true;
+//gameEngine.replay();
 
 
 }
-
 }
+
+
+
+void menuHeighScore(){
+if(mouseX > highScoreY - 100 && mouseX < highScoreY + 100 && mouseY > highScoreX - 25 && mouseY < highScoreX +25 && mouse == true){
+score.checkScore();
+score.listScore();
+}
+}
+
 
 
 }
