@@ -2,7 +2,7 @@ class MainMenu{
 // GLOBAL VARIABLES
 PImage playImg, highScoreImg, setupImg, menuImg;
 float playWidth, playHeight, playY, playX, highScoreWidth, highScoreHeight, highScoreY, highScoreX, setupWidth, setupHeight, setupY, setupX;
-boolean playGame,clearGame = false, hideMainMenu = false, showHighScore = false;
+boolean playGame,clearGame = false, hideMainMenu = false, showHighScore = false, mute = false;
 
 //CONSTRUCTOR
 MainMenu(){
@@ -40,6 +40,7 @@ menuPlayStart();
 showHighScore();
 menuHeighScore();
 goBackToMainMenu();
+mute();
 }
 
 void createMenu(){
@@ -101,6 +102,23 @@ mouse = false;
 showHighScore = false;
 hideMainMenu = false;
 }}
+
+
+
+
+
+void mute(){
+if(mouseX > setupY - 100 && mouseX < setupY + 100 && mouseY > setupX - 25 && mouseY < setupX +25 && mouse == true){
+mouse = false;
+mute = true;
+
+
+if(mute == true){
+hideMainMenu = true;
+
+}
+}
+}
 
 
 

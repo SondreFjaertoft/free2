@@ -52,9 +52,11 @@ score.checkScore();
 
 
 void gameOverPage(){
+  if(mainMenu.mute == false){
  if(soundHaveBeenPlayed == false){
  sound.soundDeath();
  soundHaveBeenPlayed = true;
+ }
  }
 
 //gravity.velocityX = 0;
