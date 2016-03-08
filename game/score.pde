@@ -51,7 +51,7 @@ text(points,40,50);
 if(player.playerX < obstaclesCollection[0].obstaclesRX && obstaclesCollection[0].cashedR ==false){
  obstaclesCollection[0].cashedR = true;
   points++;
-   if(mainMenu.mute == false){
+   if(mainMenu.wantSound == true){
   sound.soundObstacle();
   }
    
@@ -60,7 +60,7 @@ if(player.playerX < obstaclesCollection[0].obstaclesRX && obstaclesCollection[0]
 if(player.playerX < obstaclesCollection[0].obstaclesLX && obstaclesCollection[0].cashedL ==false){
  obstaclesCollection[0].cashedL = true;
   points++;
-  if(mainMenu.mute == false){
+  if(mainMenu.wantSound == true){
   sound.soundObstacle();
   }
 }
@@ -68,7 +68,7 @@ if(player.playerX < obstaclesCollection[0].obstaclesLX && obstaclesCollection[0]
 if(player.playerX < obstaclesCollection[1].obstaclesRX && obstaclesCollection[1].cashedR ==false){
  obstaclesCollection[1].cashedR = true;
   points++;
-   if(mainMenu.mute == false){
+   if(mainMenu.wantSound == true){
   sound.soundObstacle();
   }
 }
@@ -76,7 +76,7 @@ if(player.playerX < obstaclesCollection[1].obstaclesRX && obstaclesCollection[1]
 if(player.playerX < obstaclesCollection[1].obstaclesLX && obstaclesCollection[1].cashedL ==false){
  obstaclesCollection[1].cashedL = true;
   points++;
-   if(mainMenu.mute == false){
+   if(mainMenu.wantSound == true){
   sound.soundObstacle();
   }
 }
@@ -86,7 +86,7 @@ if(player.playerX < obstaclesCollection[1].obstaclesLX && obstaclesCollection[1]
 
 if(player.playerX > awards.starX - 25 && player.playerX < awards.starX + 25 && player.playerY > awards.starY - 25 && player.playerY < awards.starY + 25){
   points = points + 10;
-   if(mainMenu.mute == false){
+   if(mainMenu.wantSound == true){
   sound.soundObstacle();
   }
   awards.starX = 750;

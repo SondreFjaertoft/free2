@@ -52,14 +52,13 @@ score.checkScore();
 
 
 void gameOverPage(){
-  if(mainMenu.mute == false){
+  if(mainMenu.wantSound == true){
  if(soundHaveBeenPlayed == false){
  sound.soundDeath();
  soundHaveBeenPlayed = true;
  }
  }
 
-//gravity.velocityX = 0;
 gravity.velocityY = 0;
 moveSpeed = 0;
 gravity.gravity = 3;
@@ -80,7 +79,7 @@ mainMenu.playGame = false;
 }
 }
 
-if(reStart == true ) {
+if(reStart) {
 gameEngine.soundHaveBeenPlayed = false;
 
   
