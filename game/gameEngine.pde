@@ -33,11 +33,11 @@ bg = loadImage("backgroundtest.jpg");
 
 //FUNCTIONS
 void gameStartPage(){ 
-textSize(40);
-textAlign(CENTER, CENTER);
+
+
 text("click to start", width/2, height/2 - 80);
 if(start == true){
-  
+ 
 background(bg);
 obstacles.obstacles(moveSpeed);
 player.player();
@@ -73,16 +73,19 @@ image(mainMenu.menuImg, mainMenu.playY, mainMenu.playX + 300, mainMenu.playWidth
 if(mouseX > mainMenu.playY - 100 && mouseX < mainMenu.playY + 100 && mouseY > mainMenu.playX - 25 + 300 && mouseY < mainMenu.playX +25 + 300 && mouse == true){
 mouse = false;
 mainMenu.playGame = false;
-mainMenu.clearGame = true;
+
+
 }
 }
 
 if(reStart == true ) {
 gameEngine.soundHaveBeenPlayed = false;
+
+  
 replay();
-
-
 }
+
+
 
 
 }
@@ -95,15 +98,16 @@ awards.moveSpeedStar = 2;
 score.points = 0;
 player.playerY = width/2;
 player.playerX = height/2;
- for(int i = 0; i < 2; i++){
+for(int i = 0; i < 2; i++){
 obstaclesCollection[i].cashedR = false;
 obstaclesCollection[i].cashedL = false;
 obstaclesCollection[1].obstaclesRX = 0;
 obstaclesCollection[1].obstaclesLX = -250;
 obstaclesCollection[0].obstaclesRX = -500;
 obstaclesCollection[0].obstaclesLX = -750;
- }
+}
 awards.starX = random (-1300, -1700); 
+
 }
 
 void backgroundImage(){

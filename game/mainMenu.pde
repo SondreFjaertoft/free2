@@ -2,7 +2,7 @@ class MainMenu{
 // GLOBAL VARIABLES
 PImage playImg, highScoreImg, setupImg, menuImg;
 float playWidth, playHeight, playY, playX, highScoreWidth, highScoreHeight, highScoreY, highScoreX, setupWidth, setupHeight, setupY, setupX;
-boolean playGame,clearGame = false;
+boolean playGame,clearGame = false, hideMainMenu = false, showHighScore = false;
 
 //CONSTRUCTOR
 MainMenu(){
@@ -37,15 +37,18 @@ void menu(){
 createMenu();
 menuPlay();
 menuPlayStart();
-
+showHighScore();
 menuHeighScore();
+goBackToMainMenu();
 }
 
 void createMenu(){
+  if(hideMainMenu == false){
 imageMode(CENTER);
 image(playImg, playY, playX, playWidth, playHeight);
 image(setupImg, setupY, setupX, setupWidth, setupHeight);
 image(highScoreImg, highScoreY, highScoreX, highScoreWidth, highScoreHeight);
+  }
 }
 
 void menuPlay(){
@@ -61,11 +64,13 @@ mouse = false;
 
 
 void menuPlayStart(){
-if(playGame == true){
-gameEngine.gameStartPage();
-}
-}
 
+if(playGame == true ){
+gameEngine.gameStartPage(); 
+
+
+}
+}
 
 
 
@@ -73,10 +78,29 @@ gameEngine.gameStartPage();
 
 void menuHeighScore(){
 if(mouseX > highScoreY - 100 && mouseX < highScoreY + 100 && mouseY > highScoreX - 25 && mouseY < highScoreX +25 && mouse == true){
+mouse = false;
+hideMainMenu = true;
+showHighScore = true;
+}
+}
+
+void showHighScore(){
+if(showHighScore == true){
 score.checkScore();
 score.listScore();
 }
 }
+
+
+void goBackToMainMenu(){
+if(hideMainMenu == true) {
+image(mainMenu.menuImg, mainMenu.playY, mainMenu.playX + 300, mainMenu.playWidth, mainMenu.playHeight);
+}
+if(mouseX > mainMenu.playY - 100 && mouseX < mainMenu.playY + 100 && mouseY > mainMenu.playX - 25 + 300 && mouseY < mainMenu.playX +25 + 300 && mouse == true){
+mouse = false;
+showHighScore = false;
+hideMainMenu = false;
+}}
 
 
 
