@@ -63,6 +63,7 @@ moveSpeed = 0;
 gravity.gravity = 3;
 awards.moveSpeedStar = 0;
 if(player.playerX > 800){
+ 
 text("Game Over", width/2, height/2 - 80);
 text("Click to play again", width/2, height/2 );
 text("Your score is: " + score.points, width/2, height/2 + 80);
@@ -72,11 +73,15 @@ image(mainMenu.menuImg, mainMenu.playY, mainMenu.playX + 300, mainMenu.playWidth
 if(mouseX > mainMenu.playY - 100 && mouseX < mainMenu.playY + 100 && mouseY > mainMenu.playX - 25 + 300 && mouseY < mainMenu.playX +25 + 300 && mouse == true){
 mouse = false;
 mainMenu.playGame = false;
+mainMenu.clearGame = true;
 }
 }
+
 if(reStart == true ) {
 gameEngine.soundHaveBeenPlayed = false;
 replay();
+
+
 }
 
 

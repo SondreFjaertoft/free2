@@ -2,7 +2,7 @@ class MainMenu{
 // GLOBAL VARIABLES
 PImage playImg, highScoreImg, setupImg, menuImg;
 float playWidth, playHeight, playY, playX, highScoreWidth, highScoreHeight, highScoreY, highScoreX, setupWidth, setupHeight, setupY, setupX;
-boolean playGame,clearGame;
+boolean playGame,clearGame = false;
 
 //CONSTRUCTOR
 MainMenu(){
@@ -37,7 +37,7 @@ void menu(){
 createMenu();
 menuPlay();
 menuPlayStart();
-resetGame();
+
 menuHeighScore();
 }
 
@@ -49,28 +49,25 @@ image(highScoreImg, highScoreY, highScoreX, highScoreWidth, highScoreHeight);
 }
 
 void menuPlay(){
- clearGame = false;
+mainMenu.clearGame = false;
 if(mouseX > playY - 100 && mouseX < playY + 100 && mouseY > playX - 25 && mouseY < playX +25 && mouse == true){
 playGame = true;
 mouse = false;
-clearGame = true;
 
 }
+
+
 }
+
 
 void menuPlayStart(){
 if(playGame == true){
 gameEngine.gameStartPage();
 }
 }
-void resetGame(){
-if(clearGame == true){
-reStart = true;
-//gameEngine.replay();
 
 
-}
-}
+
 
 
 

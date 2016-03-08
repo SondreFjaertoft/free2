@@ -62,5 +62,7 @@ void mousePressed(){              //checks if mousekey is pressed
 if (mousePressed ){
 start = true;
 mouse = true;
+
+
 } 
 } 
