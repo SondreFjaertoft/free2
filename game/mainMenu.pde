@@ -113,10 +113,7 @@ mouse = false;
 mute = true;
 
 
-if(mute == true){
-hideMainMenu = true;
 
-}
 }
 }
 
