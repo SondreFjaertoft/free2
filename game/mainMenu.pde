@@ -41,6 +41,7 @@ showHighScore();
 menuHeighScore();
 goBackToMainMenu();
 mute();
+unMute();
 }
 
 void createMenu(){
@@ -111,12 +112,16 @@ void mute(){
 if(mouseX > setupY - 100 && mouseX < setupY + 100 && mouseY > setupX - 25 && mouseY < setupX +25 && mouse == true){
 mouse = false;
 mute = true;
-
-
-
+background.close();
 }
 }
 
-
+void unMute(){
+if(mouseX > setupY - 100 && mouseX < setupY + 100 && mouseY > setupX - 25 && mouseY < setupX +25 && mouse == true && mute == true){
+mouse = false;
+mute = false;
+background.play();
+}
+}
 
 }

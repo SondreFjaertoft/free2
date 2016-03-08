@@ -11,7 +11,7 @@ void setup(){
 size(500,700);                    //sets a size for the window
 gameEngine = new GameEngine();    //makes a new object of GameEngine
 mainMenu = new MainMenu();
-gameEngine.replay();
+
 textSize(40);
 textAlign(CENTER, CENTER);
 
