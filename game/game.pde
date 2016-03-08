@@ -11,16 +11,19 @@ void setup(){
 size(500,700);                    //sets a size for the window
 gameEngine = new GameEngine();    //makes a new object of GameEngine
 mainMenu = new MainMenu();
-gameEngine.replay();
+
 textSize(40);
 textAlign(CENTER, CENTER);
 
   minim = new Minim(this);
   background = minim.loadFile("background_sound.mp3", 2048);
-  background.play();
+  
+ background.play();
+  
   sound.bonusPoint = minim.loadFile("banana_sound1.mp3", 2048);
   sound.regularPoint = minim.loadFile("point_sound.mp3", 300);
   sound.deathSound = minim.loadFile("death_sound.mp3");
+
 }
 
 
