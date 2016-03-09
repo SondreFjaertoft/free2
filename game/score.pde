@@ -28,6 +28,10 @@ class Score {
   void listScore() {
     text("Your high score is: " + newHighScore, width/2, height/2 + 140);
   }
+  
+  void listHighScore(){
+  text("Your high score is: \n" + newHighScore, width/2, height/2);
+  }
 
   void checkScore() {
     String lines[] = loadStrings("test.txt");

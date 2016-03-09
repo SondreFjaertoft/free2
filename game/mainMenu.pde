@@ -118,7 +118,7 @@ class MainMenu {
   void showHighScore() {
     if (showHighScore == true) {
       score.checkScore();
-      score.listScore();
+      score.listHighScore();
     }
   }
 
