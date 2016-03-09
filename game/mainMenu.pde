@@ -1,6 +1,6 @@
 class MainMenu{ 
 // GLOBAL VARIABLES
-PImage playImg, highScoreImg, setupImg, menuImg;
+PImage playImg, highScoreImg, setupImg, menuImg, unMuteImg;
 float playWidth, playHeight, playY, playX, highScoreWidth, highScoreHeight, highScoreY, highScoreX, setupWidth, setupHeight, setupY, setupX;
 boolean playGame,clearGame = false, hideMainMenu = false, showHighScore = false, mute = false;
 private boolean wantSound = true;
@@ -28,6 +28,7 @@ MainMenu(){
   highScoreImg = loadImage("highScoreImg.png");
   setupImg = loadImage("setupImg.png");
   menuImg = loadImage("menyImg.png");
+  unMuteImg = loadImage("unMuteImg.png");
 }
 
 
@@ -43,14 +44,16 @@ showHighScore();
 menuHeighScore();
 goBackToMainMenu();
 mute();
-unMute();
+
 }
 
 void createMenu(){
   if(hideMainMenu == false){
 imageMode(CENTER);
 image(playImg, playY, playX, playWidth, playHeight);
+if(wantSound){
 image(setupImg, setupY, setupX, setupWidth, setupHeight);
+}else { image(unMuteImg, setupY, setupX, setupWidth, setupHeight);}
 image(highScoreImg, highScoreY, highScoreX, highScoreWidth, highScoreHeight);
   }
 }
@@ -142,12 +145,7 @@ if (soundPressed==false)
 
 
 
-void unMute(){
-if(mouseX > setupY - 100 && mouseX < setupY + 100 && mouseY > setupX - 25 && mouseY < setupX +25 && mouse == true && mute == true){
-//mouse = false;
-//mute = false;
-//background.play();
-}
-}
+
+
 
 }
