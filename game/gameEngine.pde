@@ -76,14 +76,12 @@ class GameEngine {
     }
 
     if (reStart) {
-      gameEngine.soundHaveBeenPlayed = false;
-
-
       replay();
     }
   }
 
   void replay() {
+     gameEngine.soundHaveBeenPlayed = false;
     gravity.velocityY = 6;
     moveSpeed = 2;
     gravity.gravity = 0.5;

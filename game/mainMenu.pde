@@ -2,7 +2,7 @@ class MainMenu {
   // GLOBAL VARIABLES
   PImage playImg, highScoreImg, setupImg, menuImg, unMuteImg, tutorialImg;
   float playWidth, playHeight, playY, playX, highScoreWidth, highScoreHeight, highScoreY, highScoreX, setupWidth, setupHeight, setupY, setupX, tutorialWidth, tutorialHeight, tutorialY, tutorialX;
-  boolean playGame, clearGame = false, hideMainMenu = false, showHighScore = false, mute = false, showTutorial = false;
+  boolean playGame, clearGame = false, hideMainMenu = false, showHighScore = false, mute = false, showTutorial = false, menuIsActive = false;
   private boolean wantSound = true;
   private boolean soundPressed = false;
 
@@ -71,12 +71,13 @@ class MainMenu {
 
   void menuPlay() {
     //mainMenu.clearGame = false;
-    if (mouseX > playY - 100 && mouseX < playY + 100 && mouseY > playX - 25 && mouseY < playX +25 && mouse == true) {
+    if (mouseX > playY - 100 && mouseX < playY + 100 && mouseY > playX - 25 && mouseY < playX +25 && mouse == true && playGame == false) {
       gameEngine.replay();
       gravity.velocityX = 0;
-
+    
       playGame = true;
       mouse = false;
+     
     }
   }
 
@@ -85,6 +86,7 @@ class MainMenu {
 
     if (playGame == true ) {
       gameEngine.gameStartPage();
+      
     }
   }
 
@@ -93,10 +95,11 @@ class MainMenu {
 
 
   void menuHeighScore() {
-    if (mouseX > highScoreY - 100 && mouseX < highScoreY + 100 && mouseY > highScoreX - 25 && mouseY < highScoreX +25 && mouse == true) {
+    if (mouseX > highScoreY - 100 && mouseX < highScoreY + 100 && mouseY > highScoreX - 25 && mouseY < highScoreX +25 && mouse == true && playGame == false && playGame == false ) {
       mouse = false;
       hideMainMenu = true;
       showHighScore = true;
+      
     }
   }
 
@@ -112,11 +115,13 @@ class MainMenu {
     if (hideMainMenu == true) {
       image(mainMenu.menuImg, mainMenu.playY, mainMenu.playX + 300, mainMenu.playWidth, mainMenu.playHeight);
     }
-    if (mouseX > mainMenu.playY - 100 && mouseX < mainMenu.playY + 100 && mouseY > mainMenu.playX - 25 + 300 && mouseY < mainMenu.playX +25 + 300 && mouse == true) {
+    if (mouseX > mainMenu.playY - 100 && mouseX < mainMenu.playY + 100 && mouseY > mainMenu.playX - 25 + 300 && mouseY < mainMenu.playX +25 + 300 && mouse == true ) {
       mouse = false;
       showHighScore = false;
       hideMainMenu = false;
       showTutorial = false;
+      
+      
     }
   }
 
@@ -132,9 +137,9 @@ class MainMenu {
       background.pause();
     }  
 
-    if (mouseX > setupY - 100 && mouseX < setupY + 100 && mouseY > setupX - 25 && mouseY < setupX +25 && mouse == true) {
+    if (mouseX > setupY - 100 && mouseX < setupY + 100 && mouseY > setupX - 25 && mouseY < setupX +25 && mouse == true && playGame == false) {
       mouse = false;
-      //mute = true;
+      
 
       if (soundPressed==false) 
       {
@@ -147,10 +152,11 @@ class MainMenu {
   }
 
   void tutorial() {
-    if (mouseX > tutorialY - 100 && mouseX < tutorialY + 100 && mouseY > tutorialX - 25 && mouseY < tutorialX +25 && mouse == true) {
+    if (mouseX > tutorialY - 100 && mouseX < tutorialY + 100 && mouseY > tutorialX - 25 && mouseY < tutorialX +25 && mouse == true && playGame == false) {
       mouse = false;
       hideMainMenu = true;
       showTutorial = true;
+      
     }
   }
   

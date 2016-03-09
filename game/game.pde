@@ -71,4 +71,9 @@ void mousePressed() {              //checks if mousekey is pressed
     start = true;
     mouse = true;
   }
-} 
+}  
+
+void mouseReleased(){
+    mouse = false;
+    
+  }
