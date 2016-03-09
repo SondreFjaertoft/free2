@@ -86,7 +86,7 @@ class Score {
     if (player.playerX > awards.starX - 25 && player.playerX < awards.starX + 25 && player.playerY > awards.starY - 25 && player.playerY < awards.starY + 25) {
       points = points + 10;
       if (mainMenu.wantSound == true) {
-        sound.soundObstacle();
+        sound.soundBanana();
       }
       awards.starX = 750;
     }

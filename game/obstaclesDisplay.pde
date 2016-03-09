@@ -38,12 +38,12 @@ class ObstaclesDisplay {
 
   void obstaclesCreateRight() {
     imageMode(CORNER);
-    image(obs, obstaclesRY, obstaclesRX, 500-obstaclesRY, 20);
+    image(obs, obstaclesRY, obstaclesRX, 500-obstaclesRY, 12);
   }
 
 
   void obstaclesCreateLeft() {
-    image(obs, 0, obstaclesLX, obstaclesLY, 20);
+    image(obs, 0, obstaclesLX, obstaclesLY, 12);
   }
 
   void obstacleCreateNew() {
