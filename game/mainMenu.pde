@@ -121,10 +121,10 @@ void mute(){
   
 if(wantSound){
   background.play();
-println("lyyyd");
+
 }else{
   background.pause();
-  println("muuute");
+
 }  
   
   
