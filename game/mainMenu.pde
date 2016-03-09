@@ -83,7 +83,7 @@ class MainMenu {
 
   void menuPlay() {
     //mainMenu.clearGame = false;
-    if (mouseX > playY - 100 && mouseX < playY + 100 && mouseY > playX - 25 && mouseY < playX +25 && mouse == true && playGame == false) {
+    if (mouseX > playY - 100 && mouseX < playY + 100 && mouseY > playX - 40 && mouseY < playX +40 && mouse == true && playGame == false) {
       gameEngine.replay();
       gravity.velocityX = 0;
     
@@ -107,7 +107,7 @@ class MainMenu {
 
 
   void menuHeighScore() {
-    if (mouseX > highScoreY - 100 && mouseX < highScoreY + 100 && mouseY > highScoreX - 25 && mouseY < highScoreX +25 && mouse == true && playGame == false && playGame == false ) {
+    if (mouseX > highScoreY - 100 && mouseX < highScoreY + 100 && mouseY > highScoreX - 40 && mouseY < highScoreX +40 && mouse == true && playGame == false && playGame == false ) {
       mouse = false;
       hideMainMenu = true;
       showHighScore = true;
@@ -127,7 +127,7 @@ class MainMenu {
     if (hideMainMenu == true) {
       image(mainMenu.menuImg, mainMenu.playY, mainMenu.playX + 400, mainMenu.playWidth, mainMenu.playHeight);
     }
-    if (mouseX > mainMenu.playY - 100 && mouseX < mainMenu.playY + 100 && mouseY > mainMenu.playX - 25 + 400 && mouseY < mainMenu.playX +25 + 400 && mouse == true ) {
+    if (mouseX > mainMenu.playY - 100 && mouseX < mainMenu.playY + 100 && mouseY > mainMenu.playX - 40 + 400 && mouseY < mainMenu.playX +40 + 400 && mouse == true ) {
       mouse = false;
       showHighScore = false;
       hideMainMenu = false;
@@ -149,7 +149,7 @@ class MainMenu {
       background.pause();
     }  
 
-    if (mouseX > setupY - 100 && mouseX < setupY + 100 && mouseY > setupX - 25 && mouseY < setupX +25 && mouse == true && playGame == false) {
+    if (mouseX > setupY - 100 && mouseX < setupY + 100 && mouseY > setupX - 40 && mouseY < setupX +40 && mouse == true && playGame == false) {
       mouse = false;
       
 
@@ -164,7 +164,7 @@ class MainMenu {
   }
 
   void tutorial() {
-    if (mouseX > tutorialY - 100 && mouseX < tutorialY + 100 && mouseY > tutorialX - 25 && mouseY < tutorialX +25 && mouse == true && playGame == false) {
+    if (mouseX > tutorialY - 100 && mouseX < tutorialY + 100 && mouseY > tutorialX - 40 && mouseY < tutorialX +40 && mouse == true && playGame == false) {
       mouse = false;
       hideMainMenu = true;
       showTutorial = true;
