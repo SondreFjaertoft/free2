@@ -20,8 +20,8 @@ float moveSpeed;
   obstaclesRX = - 500+(i*500);
   obstaclesLX = - 750+(i*500);
   obs = loadImage("Grein.png");
-  obstaclesRY = random(100, 320);
-  obstaclesLY = random(100, 320);
+  obstaclesRY = random(150, 320);
+  obstaclesLY = random(150, 320);
  
 }
 
@@ -51,7 +51,7 @@ void obstacleCreateNew(){
   
 if( obstaclesRX > 700){
     obstaclesRX = -300;
-    obstaclesRY = random(100, 320);
+    obstaclesRY = random(150, 320);
     cashedR = false;
 
 }
@@ -60,7 +60,7 @@ if( obstaclesRX > 700){
 
 if( obstaclesLX > 700){
  obstaclesLX = -300;
- obstaclesLY = random(100, 320);
+ obstaclesLY = random(150, 320);
  cashedL = false;
 
 }

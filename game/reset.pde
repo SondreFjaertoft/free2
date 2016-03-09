@@ -17,7 +17,6 @@ sound = new Sound();
 void gameOver() {
 //sjekker om player kommer bort i veggene, dersom den gjør det blir spillet resett
 if(player.playerX - player.playerHeight/2 < 0 || player.playerY - player.playerWidth/2 < 0 || player.playerY + player.playerWidth/2 > width || player.playerX + player.playerHeight/2 > height) {
-
 gameEngine.gameOverPage();
  
 }

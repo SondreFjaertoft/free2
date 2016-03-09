@@ -3,6 +3,8 @@ class MainMenu{
 PImage playImg, highScoreImg, setupImg, menuImg;
 float playWidth, playHeight, playY, playX, highScoreWidth, highScoreHeight, highScoreY, highScoreX, setupWidth, setupHeight, setupY, setupX;
 boolean playGame,clearGame = false, hideMainMenu = false, showHighScore = false, mute = false;
+private boolean wantSound = true;
+private boolean soundPressed = false;
 
 //CONSTRUCTOR
 MainMenu(){
@@ -41,6 +43,7 @@ showHighScore();
 menuHeighScore();
 goBackToMainMenu();
 mute();
+unMute();
 }
 
 void createMenu(){
@@ -53,10 +56,14 @@ image(highScoreImg, highScoreY, highScoreX, highScoreWidth, highScoreHeight);
 }
 
 void menuPlay(){
-mainMenu.clearGame = false;
+//mainMenu.clearGame = false;
 if(mouseX > playY - 100 && mouseX < playY + 100 && mouseY > playX - 25 && mouseY < playX +25 && mouse == true){
+gameEngine.replay();
+gravity.velocityX = 0;
+
 playGame = true;
 mouse = false;
+
 
 }
 
@@ -108,15 +115,39 @@ hideMainMenu = false;
 
 
 void mute(){
+  
+if(wantSound){
+  background.play();
+println("lyyyd");
+}else{
+  background.pause();
+  println("muuute");
+}  
+  
+  
 if(mouseX > setupY - 100 && mouseX < setupY + 100 && mouseY > setupX - 25 && mouseY < setupX +25 && mouse == true){
 mouse = false;
-mute = true;
+//mute = true;
+
+if (soundPressed==false) 
+      {
+      soundPressed = true;
+      wantSound = !wantSound;  
+      }
+  }else {
+    soundPressed = false;
+  }
+}
 
 
 
+
+void unMute(){
+if(mouseX > setupY - 100 && mouseX < setupY + 100 && mouseY > setupX - 25 && mouseY < setupX +25 && mouse == true && mute == true){
+//mouse = false;
+//mute = false;
+//background.play();
 }
 }
-
-
 
 }
