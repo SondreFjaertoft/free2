@@ -1,42 +1,42 @@
-class Awards extends Obstacles{
-// GLOBAL VARIABLES
-PImage star;
-float moveSpeedStar;
-float starX;
-float starY;
+class Awards extends Obstacles {
+  // GLOBAL VARIABLES
+  PImage star;
+  float moveSpeedStar;
+  float starX;
+  float starY;
 
 
-//CONSTRUCTOR
-Awards(){
-star = loadImage("Banana.png");
-moveSpeedStar = 2;
-starX = random (-1300, -1700);
-starY = random ( 70, 470);
-}
+  //CONSTRUCTOR
+  Awards() {
+    star = loadImage("Banana.png");
+    moveSpeedStar = 2;
+    starX = random (-1300, -1700);
+    starY = random ( 70, 470);
+  }
 
 
 
-//FUNCTIONS
-void star(){
-starMove();
-starDisplay();
-starReset();
-}
+  //FUNCTIONS
+  void star() {
+    starMove();
+    starDisplay();
+    starReset();
+  }
 
 
-void starMove(){
+  void starMove() {
 
-starX = starX + moveSpeedStar;
-}
+    starX = starX + moveSpeedStar;
+  }
 
-void starDisplay(){
-imageMode(CENTER);  
-image(star, starY, starX, 55, 55);
-}
+  void starDisplay() {
+    imageMode(CENTER);  
+    image(star, starY, starX, 55, 55);
+  }
 
-void starReset(){
-if (starX > 1600){
-starX = random (-1300, -1700);
-}
-}
+  void starReset() {
+    if (starX > 1600) {
+      starX = random (-1300, -1700);
+    }
+  }
 }
