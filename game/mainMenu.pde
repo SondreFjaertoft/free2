@@ -9,24 +9,24 @@ class MainMenu {
   //CONSTRUCTOR
   MainMenu() {
     playWidth = 200;
-    playHeight = 120;
+    playHeight = 100;
     playY = width/2;
-    playX = height/2 - 230;
+    playX = height/2 - 160;
 
     highScoreWidth = 200; 
-    highScoreHeight = 120; 
+    highScoreHeight = 100; 
     highScoreY = width/2; 
-    highScoreX = height/2 - 120;
+    highScoreX = height/2 - 60;
 
     setupWidth = 200; 
-    setupHeight = 120; 
+    setupHeight = 100; 
     setupY = width/2; 
-    setupX = height/2 +100;
+    setupX = height/2 + 140;
 
     tutorialWidth = 200;
-    tutorialHeight = 120;
+    tutorialHeight = 100;
     tutorialY = width/2;
-    tutorialX = height/2 - 10;
+    tutorialX = height/2 + 40;
     
     muteWidth = 40;
     muteHeight = 40;
@@ -125,9 +125,9 @@ class MainMenu {
 
   void goBackToMainMenu() {
     if (hideMainMenu == true) {
-      image(mainMenu.menuImg, mainMenu.playY, mainMenu.playX + 300, mainMenu.playWidth, mainMenu.playHeight);
+      image(mainMenu.menuImg, mainMenu.playY, mainMenu.playX + 400, mainMenu.playWidth, mainMenu.playHeight);
     }
-    if (mouseX > mainMenu.playY - 100 && mouseX < mainMenu.playY + 100 && mouseY > mainMenu.playX - 25 + 300 && mouseY < mainMenu.playX +25 + 300 && mouse == true ) {
+    if (mouseX > mainMenu.playY - 100 && mouseX < mainMenu.playY + 100 && mouseY > mainMenu.playX - 25 + 400 && mouseY < mainMenu.playX +25 + 400 && mouse == true ) {
       mouse = false;
       showHighScore = false;
       hideMainMenu = false;
