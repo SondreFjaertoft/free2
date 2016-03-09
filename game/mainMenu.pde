@@ -1,7 +1,7 @@
 class MainMenu { 
   // GLOBAL VARIABLES
-  PImage playImg, highScoreImg, setupImg, menuImg, unMuteImg, tutorialImg;
-  float playWidth, playHeight, playY, playX, highScoreWidth, highScoreHeight, highScoreY, highScoreX, setupWidth, setupHeight, setupY, setupX, tutorialWidth, tutorialHeight, tutorialY, tutorialX;
+  PImage playImg, highScoreImg, setupImg, menuImg, unMuteImg, tutorialImg, muteIkonImg;
+  float playWidth, playHeight, playY, playX, highScoreWidth, highScoreHeight, highScoreY, highScoreX, setupWidth, setupHeight, setupY, setupX, tutorialWidth, tutorialHeight, tutorialY, tutorialX, muteWidth, muteHeight, muteY, muteX;
   boolean playGame, clearGame = false, hideMainMenu = false, showHighScore = false, mute = false, showTutorial = false, menuIsActive = false;
   private boolean wantSound = true;
   private boolean soundPressed = false;
@@ -27,6 +27,11 @@ class MainMenu {
     tutorialHeight = 50;
     tutorialY = width/2;
     tutorialX = height/2 + 70;
+    
+    muteWidth = 40;
+    muteHeight = 40;
+    muteY = 450;
+    muteX = 50;
 
 
 
@@ -36,6 +41,7 @@ class MainMenu {
     menuImg = loadImage("menyImg.png");
     unMuteImg = loadImage("unMuteImg.png");
     tutorialImg = loadImage("tutorialImg.png");
+    muteIkonImg = loadImage("MuteIkonImg.png");
   }
 
 
@@ -66,6 +72,12 @@ class MainMenu {
       }
       image(highScoreImg, highScoreY, highScoreX, highScoreWidth, highScoreHeight);
       image(tutorialImg, tutorialY, tutorialX, tutorialWidth, tutorialHeight);
+    }
+  }
+  
+  void muteIkon(){
+    if(!wantSound){
+  image(muteIkonImg, muteY, muteX, muteWidth, muteHeight);
     }
   }
 

@@ -29,6 +29,7 @@ void draw() {
   gameEngine.backgroundImage();
   //gameEngine.gameStartPage();
   mainMenu.menu();
+ mainMenu.muteIkon();
 }
 
 void keyPressed() {
