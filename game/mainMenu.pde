@@ -9,24 +9,24 @@ class MainMenu {
   //CONSTRUCTOR
   MainMenu() {
     playWidth = 200;
-    playHeight = 50;
+    playHeight = 120;
     playY = width/2;
-    playX = height/2 - 70;
+    playX = height/2 - 230;
 
     highScoreWidth = 200; 
-    highScoreHeight = 50; 
+    highScoreHeight = 120; 
     highScoreY = width/2; 
-    highScoreX = height/2;
+    highScoreX = height/2 - 120;
 
     setupWidth = 200; 
-    setupHeight = 50; 
+    setupHeight = 120; 
     setupY = width/2; 
-    setupX = height/2 +140;
+    setupX = height/2 +100;
 
     tutorialWidth = 200;
-    tutorialHeight = 50;
+    tutorialHeight = 120;
     tutorialY = width/2;
-    tutorialX = height/2 + 70;
+    tutorialX = height/2 - 10;
     
     muteWidth = 40;
     muteHeight = 40;
@@ -38,7 +38,7 @@ class MainMenu {
     playImg = loadImage("playImg.png");
     highScoreImg = loadImage("highScoreImg.png");
     setupImg = loadImage("setupImg.png");
-    menuImg = loadImage("menyImg.png");
+    menuImg = loadImage("menyImg.png");     // kult bilete her liksom
     unMuteImg = loadImage("unMuteImg.png");
     tutorialImg = loadImage("tutorialImg.png");
     muteIkonImg = loadImage("MuteIkonImg.png");
