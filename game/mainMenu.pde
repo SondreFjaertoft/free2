@@ -1,7 +1,7 @@
 class MainMenu { 
   // GLOBAL VARIABLES
   PImage playImg, highScoreImg, setupImg, menuImg, unMuteImg, tutorialImg, muteIkonImg;
-  float playWidth, playHeight, playY, playX, highScoreWidth, highScoreHeight, highScoreY, highScoreX, setupWidth, setupHeight, setupY, setupX, tutorialWidth, tutorialHeight, tutorialY, tutorialX, muteWidth, muteHeight, muteY, muteX;
+  float playWidth, playHeight, playY, playX, highScoreWidth, highScoreHeight, highScoreY, highScoreX, setupWidth, setupHeight, setupY, setupX, tutorialWidth, tutorialHeight, tutorialY, tutorialX, muteWidth, muteHeight, muteY, muteX, menuWidth, menuHeight, menuY, menuX;
   boolean playGame, clearGame = false, hideMainMenu = false, showHighScore = false, mute = false, showTutorial = false, menuIsActive = false;
   private boolean wantSound = true;
   private boolean soundPressed = false;
@@ -27,7 +27,12 @@ class MainMenu {
     tutorialHeight = 100;
     tutorialY = width/2;
     tutorialX = height/2 + 40;
-    
+
+    menuWidth = 200;
+    menuHeight = 100;
+    menuY = width/2;
+    menuX = height/2 + 240;
+
     muteWidth = 40;
     muteHeight = 40;
     muteY = 450;
@@ -59,6 +64,7 @@ class MainMenu {
     mute();
     tutorial();
     showTutorial();
+    hower();
   }
 
   void createMenu() {
@@ -74,10 +80,10 @@ class MainMenu {
       image(tutorialImg, tutorialY, tutorialX, tutorialWidth, tutorialHeight);
     }
   }
-  
-  void muteIkon(){
-    if(!wantSound){
-  image(muteIkonImg, muteY, muteX, muteWidth, muteHeight);
+
+  void muteIkon() {
+    if (!wantSound) {
+      image(muteIkonImg, muteY, muteX, muteWidth, muteHeight);
     }
   }
 
@@ -86,19 +92,79 @@ class MainMenu {
     if (mouseX > playY - 100 && mouseX < playY + 100 && mouseY > playX - 40 && mouseY < playX +40 && mouse == true && playGame == false) {
       gameEngine.replay();
       gravity.velocityX = 0;
-    
+
       playGame = true;
       mouse = false;
-     
     }
   }
+
+
+  void hower() {
+    howerPlay();
+    howerHighScore();
+    howerTutorial();
+    howerMute();
+    howerMenu();
+  }
+
+  void howerPlay() {
+    if (mouseX > playY - 100 && mouseX < playY + 100 && mouseY > playX - 40 && mouseY < playX +40) {
+      playWidth = 220;
+      playHeight = 120;
+    } else {
+      playWidth = 200;
+      playHeight = 100;
+    }
+  }
+
+  void howerHighScore() {
+    if (mouseX > highScoreY - 100 && mouseX < highScoreY + 100 && mouseY > highScoreX - 40 && mouseY < highScoreX +40)
+    {
+      highScoreWidth = 220; 
+      highScoreHeight = 120;
+    } else {
+      highScoreWidth = 200; 
+      highScoreHeight = 100;
+    }
+  }
+
+
+  void howerTutorial() {
+    if (mouseX > tutorialY - 100 && mouseX < tutorialY + 100 && mouseY > tutorialX - 40 && mouseY < tutorialX +40) {
+      tutorialWidth = 220;
+      tutorialHeight = 120;
+    } else {
+      tutorialWidth = 200;
+      tutorialHeight = 100;
+    }
+  }
+
+  void howerMute() {
+    if (mouseX > setupY - 100 && mouseX < setupY + 100 && mouseY > setupX - 40 && mouseY < setupX +40) {
+      setupWidth = 220; 
+      setupHeight = 120;
+    } else {    
+      setupWidth = 200; 
+      setupHeight = 100;
+    }
+  }
+
+  void howerMenu() {
+    if (mouseX > mainMenu.menuY - 100 && mouseX < mainMenu.menuY + 100 && mouseY > mainMenu.menuX - 40 && mouseY < mainMenu.menuX +40) {
+      menuWidth = 220;
+      menuHeight = 120;
+    } else {
+      menuWidth = 200;
+      menuHeight = 100;
+    }
+  }
+
 
 
   void menuPlayStart() {
 
     if (playGame == true ) {
       gameEngine.gameStartPage();
-      
     }
   }
 
@@ -111,7 +177,6 @@ class MainMenu {
       mouse = false;
       hideMainMenu = true;
       showHighScore = true;
-      
     }
   }
 
@@ -125,15 +190,13 @@ class MainMenu {
 
   void goBackToMainMenu() {
     if (hideMainMenu == true) {
-      image(mainMenu.menuImg, mainMenu.playY, mainMenu.playX + 400, mainMenu.playWidth, mainMenu.playHeight);
+      image(mainMenu.menuImg, mainMenu.menuY, mainMenu.menuX, mainMenu.menuWidth, mainMenu.menuHeight);
     }
-    if (mouseX > mainMenu.playY - 100 && mouseX < mainMenu.playY + 100 && mouseY > mainMenu.playX - 40 + 400 && mouseY < mainMenu.playX +40 + 400 && mouse == true ) {
+    if (mouseX > mainMenu.menuY - 100 && mouseX < mainMenu.menuY + 100 && mouseY > mainMenu.menuX - 40 && mouseY < mainMenu.menuX +40 && mouse == true ) {
       mouse = false;
       showHighScore = false;
       hideMainMenu = false;
       showTutorial = false;
-      
-      
     }
   }
 
@@ -151,7 +214,7 @@ class MainMenu {
 
     if (mouseX > setupY - 100 && mouseX < setupY + 100 && mouseY > setupX - 40 && mouseY < setupX +40 && mouse == true && playGame == false) {
       mouse = false;
-      
+
 
       if (soundPressed==false) 
       {
@@ -168,14 +231,12 @@ class MainMenu {
       mouse = false;
       hideMainMenu = true;
       showTutorial = true;
-      
     }
   }
-  
+
   void showTutorial() {
-   if(showTutorial == true){
-      text("Trykke space \n ungå hinder \n eller dø", width/2 , height/2);
-   }
+    if (showTutorial == true) {
+      text("Trykke space \n ungå hinder \n eller dø", width/2, height/2);
+    }
   }
-  
 }

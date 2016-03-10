@@ -67,9 +67,9 @@ class GameEngine {
       text("Click to play again", width/2, height/2 );
       text("Your score is: " + score.points, width/2, height/2 + 80);
       score.listScore();
-      image(mainMenu.menuImg, mainMenu.playY, mainMenu.playX + 400, mainMenu.playWidth, mainMenu.playHeight);
+      image(mainMenu.menuImg, mainMenu.menuY, mainMenu.menuX, mainMenu.menuWidth, mainMenu.menuHeight);
 
-      if (mouseX > mainMenu.playY - 100 && mouseX < mainMenu.playY + 100 && mouseY > mainMenu.playX - 40 + 400 && mouseY < mainMenu.playX +40 + 400 && mouse == true) {
+      if (mouseX > mainMenu.menuY - 100 && mouseX < mainMenu.menuY + 100 && mouseY > mainMenu.menuX - 40 && mouseY < mainMenu.menuX +40 && mouse == true) {
         mouse = false;
         mainMenu.playGame = false;
       }
