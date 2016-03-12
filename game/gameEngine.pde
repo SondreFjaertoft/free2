@@ -25,7 +25,7 @@ class GameEngine {
     //sound = new Sound();
 
 
-    bg = loadImage("backgroundtest.jpg");
+    bg = loadImage("backgroundtest2.jpg");
     gameOverBackgroundImg = loadImage ("gameOverBackgroundImg.jpg");
   }
 
