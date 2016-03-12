@@ -9,7 +9,7 @@ Sound sound;
 
 class GameEngine {
   // GLOBAL VARIABLES
-  PImage bg;
+  PImage bg, gameOverBackgroundImg;
   float moveSpeed = 2;  
   private boolean soundHaveBeenPlayed = false;
   boolean checkReset = false;
@@ -26,6 +26,7 @@ class GameEngine {
 
 
     bg = loadImage("backgroundtest.jpg");
+    gameOverBackgroundImg = loadImage ("gameOverBackgroundImg.jpg");
   }
 
 
@@ -62,10 +63,9 @@ class GameEngine {
     gravity.gravity = 3;
     awards.moveSpeedStar = 0;
     if (player.playerX > 800) {
+    image(gameOverBackgroundImg, width/2, height/2 -60 , 280, 421 ); 
 
-      text("Game Over", width/2, height/2 - 80);
-      text("Click to play again", width/2, height/2 );
-      text("Your score is: " + score.points, width/2, height/2 + 80);
+      text( score.points, width/2 + 78, height/2 - 18);
       score.listScore();
       image(mainMenu.menuImg, mainMenu.menuY, mainMenu.menuX, mainMenu.menuWidth, mainMenu.menuHeight);
 

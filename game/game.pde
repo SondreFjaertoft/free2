@@ -12,7 +12,7 @@ void setup() {
   gameEngine = new GameEngine();    //makes a new object of GameEngine
   mainMenu = new MainMenu();
 
-  textSize(40);
+  textSize(32);
   textAlign(CENTER, CENTER);
 
   minim = new Minim(this);
