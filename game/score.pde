@@ -83,7 +83,7 @@ class Score {
 
     //bonus poeng!
 
-    if (player.playerX > awards.starX - 25 && player.playerX < awards.starX + 25 && player.playerY > awards.starY - 25 && player.playerY < awards.starY + 25) {
+    if (player.playerX + player.playerHeight/2 > awards.starX - 25 && player.playerX - player.playerHeight/2 < awards.starX + 25 && player.playerY + player.playerWidth/2 > awards.starY - 25 && player.playerY - player.playerWidth/2 < awards.starY + 25) {
       points = points + 10;
       if (mainMenu.wantSound == true) {
         sound.soundBanana();
