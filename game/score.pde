@@ -30,7 +30,7 @@ class Score {
   }
   
   void listHighScore(){
-  text("Your high score is: \n" + newHighScore, width/2, height/2);
+  text(newHighScore, width/2, height/2 - 53);
   }
 
   void checkScore() {

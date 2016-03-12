@@ -1,6 +1,6 @@
 class MainMenu { 
   // GLOBAL VARIABLES
-  PImage playImg, highScoreImg, setupImg, menuImg, unMuteImg, tutorialImg, muteIkonImg;
+  PImage playImg, highScoreImg, setupImg, menuImg, unMuteImg, tutorialImg, muteIkonImg, tutorialBackgroundImg, highScoreBackgroundImg;
   float playWidth, playHeight, playY, playX, highScoreWidth, highScoreHeight, highScoreY, highScoreX, setupWidth, setupHeight, setupY, setupX, tutorialWidth, tutorialHeight, tutorialY, tutorialX, muteWidth, muteHeight, muteY, muteX, menuWidth, menuHeight, menuY, menuX;
   boolean playGame, clearGame = false, hideMainMenu = false, showHighScore = false, mute = false, showTutorial = false, menuIsActive = false;
   private boolean wantSound = true;
@@ -47,6 +47,8 @@ class MainMenu {
     unMuteImg = loadImage("unMuteImg.png");
     tutorialImg = loadImage("tutorialImg.png");
     muteIkonImg = loadImage("MuteIkonImg.png");
+    tutorialBackgroundImg = loadImage("tutorialBackgroundImg.jpg");
+    highScoreBackgroundImg = loadImage("highScoreBackgroundImg.jpg");
   }
 
 
@@ -182,6 +184,7 @@ class MainMenu {
 
   void showHighScore() {
     if (showHighScore == true) {
+       image(highScoreBackgroundImg, width/2, height/2 -60 , 280, 421 ); 
       score.checkScore();
       score.listHighScore();
     }
@@ -236,7 +239,7 @@ class MainMenu {
 
   void showTutorial() {
     if (showTutorial == true) {
-      text("Trykke space \n ungå hinder \n eller dø", width/2, height/2);
+      image(tutorialBackgroundImg, width/2, height/2 -60 , 280, 421 ); 
     }
   }
 }
