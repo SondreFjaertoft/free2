@@ -29,7 +29,7 @@ void draw() {
   gameEngine.backgroundImage();
   //gameEngine.gameStartPage();
   mainMenu.menu();
- mainMenu.muteIkon();
+  mainMenu.muteIkon();
 }
 
 void keyPressed() {
@@ -74,7 +74,6 @@ void mousePressed() {              //checks if mousekey is pressed
   }
 }  
 
-void mouseReleased(){
-    mouse = false;
-    
-  }
+void mouseReleased() {
+  mouse = false;
+}
