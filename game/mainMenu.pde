@@ -184,7 +184,7 @@ class MainMenu {
 
   void showHighScore() {
     if (showHighScore == true) {
-       image(highScoreBackgroundImg, width/2, height/2 -60 , 280, 421 ); 
+       image(highScoreBackgroundImg, width/2, height/2 -60 , 280, 180 ); 
       score.checkScore();
       score.listHighScore();
     }

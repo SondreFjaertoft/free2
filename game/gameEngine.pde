@@ -6,7 +6,7 @@ Gravity gravity;
 Score score;
 Sound sound;
 
-
+// setter variablene or denne klassen
 class GameEngine {
   // GLOBAL VARIABLES
   PImage bg, gameOverBackgroundImg;
@@ -24,7 +24,7 @@ class GameEngine {
     score = new Score();
     //sound = new Sound();
 
-
+    // laster inn bilda som blir bruk i denne klassen
     bg = loadImage("backgroundtest2.jpg");
     gameOverBackgroundImg = loadImage ("gameOverBackgroundImg.jpg");
   }
@@ -33,7 +33,7 @@ class GameEngine {
 
   //FUNCTIONS
   void gameStartPage() { 
-
+  // når man trykker play så køyres denne klassen. Den starter opp alle funksjonene som ligger under. 
 
     text("click to start", width/2, height/2 - 80);
     if (start == true) {
@@ -49,20 +49,23 @@ class GameEngine {
     }
   }
 
-
+  // dersom man dør så kommer man til denne klassen
   void gameOverPage() {
+    
+    // spiller av død lyden
     if (mainMenu.wantSound == true) {
       if (soundHaveBeenPlayed == false) {
         sound.soundDeath();
         soundHaveBeenPlayed = true;
       }
     }
-
+    
+    // låser spillet, slik at ting ikke beveger seg når man er dø.
     gravity.velocityY = 0;
     moveSpeed = 0;
-    gravity.gravity = 3;
+    gravity.gravity = 3;                                            //gravityen blir mye større, slik at spilleren detter rett ned nør man dør
     awards.moveSpeedStar = 0;
-    if (player.playerX > 800) {
+    if (player.playerX > 800) {                                    // når spilleren har falt ut av skjermen kommer game ove menyen opp
     image(gameOverBackgroundImg, width/2, height/2 -60 , 280, 421 ); 
 
       text( score.points, width/2 + 78, height/2 - 18);
@@ -74,12 +77,14 @@ class GameEngine {
         mainMenu.playGame = false;
       }
     }
-
+        // blir reStart "true" så køyres replay (press space)
     if (reStart) {
       replay();
     }
   }
 
+    
+        // Denne funkjsonen starter spillet på nytt. Den setter alle variablene tilbake til slik det var når spillet startet første gangen.  
   void replay() {
      gameEngine.soundHaveBeenPlayed = false;
     gravity.velocityY = 6;
@@ -100,6 +105,8 @@ class GameEngine {
     awards.starX = random (-1300, -1700);
   }
 
+
+    // tegner bakgrunsbildet
   void backgroundImage() {
     background(bg);
   }
