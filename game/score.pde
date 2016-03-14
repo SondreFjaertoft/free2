@@ -2,14 +2,14 @@
 
 
 class Score {
-  // GLOBAL VARIABLES
+  // GLOBAL VARIABLES 
   int points;
   String highScore;
   int newHighScore;
 
 
   //CONSTRUCTOR
-  Score() {
+  Score() {      //setter verdi til variablene
     points = 0;
     sound = new Sound();
   }
@@ -17,27 +17,27 @@ class Score {
 
 
   //FUNCTIONS
-
+  //lagrer ei tekst fil i gamefolder med highscore
   void saveScore() {
-    //save score
     highScore = ("" + score.points);
     String[] list = split(highScore, ' ');
     saveStrings("test.txt", list);
   }
 
+  // viser highscore
   void listScore() {
     text(newHighScore, width/2 - 35, height/2 + 60);
   }
   
+  // viser highscore
   void listHighScore(){
   text(newHighScore, width/2, height/2 - 53);
   }
 
+  // ser om den nye highscoren er større en den gamle, dersom den er det, køyrer den SaceScore()
   void checkScore() {
     String lines[] = loadStrings("test.txt");
-    //text("Your high score is: " + lines[0],  width/2, height/2 + 140);
     newHighScore = parseInt(lines[0]);
-    //text("Your high score is: " + newHighScore,  width/2, height/2 + 140);
     if (points > newHighScore) {
       saveScore();
     }
@@ -45,9 +45,10 @@ class Score {
 
 
   void playerScore() {
-
+//viser score
     text(points, 40, 50);  
 
+// Dersom den paserer hinderet nr 1 til høgre, får du et poeng + poeng lyden køyrer.
     if (player.playerX < obstaclesCollection[0].obstaclesRX && obstaclesCollection[0].cashedR ==false) {
       obstaclesCollection[0].cashedR = true;
       points++;
@@ -56,6 +57,7 @@ class Score {
       }
     }
 
+// Dersom den paserer hinderet nr 1 til venstre, får du et poeng + poeng lyden køyrer.
     if (player.playerX < obstaclesCollection[0].obstaclesLX && obstaclesCollection[0].cashedL ==false) {
       obstaclesCollection[0].cashedL = true;
       points++;
@@ -64,6 +66,7 @@ class Score {
       }
     }
 
+// Dersom den paserer hinderet nr 2 til høgre, får du et poeng + poeng lyden køyrer.
     if (player.playerX < obstaclesCollection[1].obstaclesRX && obstaclesCollection[1].cashedR ==false) {
       obstaclesCollection[1].cashedR = true;
       points++;
@@ -72,6 +75,7 @@ class Score {
       }
     }
 
+// Dersom den paserer hinderet nr 2 til venstre, får du et poeng + poeng lyden køyrer.
     if (player.playerX < obstaclesCollection[1].obstaclesLX && obstaclesCollection[1].cashedL ==false) {
       obstaclesCollection[1].cashedL = true;
       points++;
@@ -81,8 +85,8 @@ class Score {
     }
 
 
-    //bonus poeng!
 
+// dersom spilleren kommer bort i banana, får du 10 bonus poeng, samt bonus lyden kommer på.
     if (player.playerX + player.playerHeight/2 > awards.starX - 25 && player.playerX - player.playerHeight/2 < awards.starX + 25 && player.playerY + player.playerWidth/2 > awards.starY - 25 && player.playerY - player.playerWidth/2 < awards.starY + 25) {
       points = points + 10;
       if (mainMenu.wantSound == true) {

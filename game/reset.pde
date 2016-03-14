@@ -19,14 +19,14 @@ class Reset {
       gameEngine.gameOverPage();
     }
 
-    //høgre hinder 
+    //sjekker om player kommer bort i høgre hinder, dersom den gjør det blir spillet resett
     for (int i = 0; i < 2; i++) {
       if (player.playerX - player.playerHeight < obstaclesCollection[i].obstaclesRX && player.playerY + player.playerWidth/2 > obstaclesCollection[i].obstaclesRY && player.playerX + player.playerHeight > obstaclesCollection[i].obstaclesRX + 12) {
 
         gameEngine.gameOverPage();
       } 
 
-      //venstre hinder 
+      //sjekker om player kommer bort i venstre hinder, dersom den gjør det blir spillet resett
       else if (player.playerX - player.playerHeight < obstaclesCollection[i].obstaclesLX && player.playerY -player.playerWidth/2 < obstaclesCollection[i].obstaclesLY && player.playerX + player.playerHeight> obstaclesCollection[i].obstaclesLX + 12) {
 
         gameEngine.gameOverPage();

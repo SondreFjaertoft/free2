@@ -8,7 +8,7 @@ class Sound {
   AudioPlayer deathSound;
 
 
-
+// denne funkjsonen kalles for at bonus lyden skal køyres
   void soundBanana()
   {
     minim = new Minim(this);
@@ -17,6 +17,7 @@ class Sound {
     bonusPoint.play();
   }
 
+// denne funkjsonen kalles for at vanlige poeng lyden skal køyres
   void soundObstacle()
   {
     minim = new Minim(this);
@@ -25,6 +26,7 @@ class Sound {
     regularPoint.play();
   }
 
+// denne funkjsonen kalles for at game over lyden skal køyres
   void soundDeath()
   {
     //minim = new Minim(this);
@@ -32,21 +34,6 @@ class Sound {
     deathSound.play(600);
   }
 
-  void BackgroundSoundStop()
-  {
-    background.close();
-    minim.stop();
-  }
 
-  void soundDeathStop()
-  {
-    deathSound.close();
-    minim.stop();
-  } 
 
-  void soundObstacleStop()
-  {
-    regularPoint.close();
-    minim.stop();
-  }
 }
